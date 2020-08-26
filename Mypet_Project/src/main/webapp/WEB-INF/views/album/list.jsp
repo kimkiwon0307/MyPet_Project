@@ -3,7 +3,7 @@
 <% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
 
 
-<%-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -58,8 +58,7 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Business Name or Tagline</h1>
-          <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
+         <img src="https://cdn.pixabay.com/photo/2017/11/24/10/43/album-2974646__340.jpg">
         </div>
       </div>
     </div>
@@ -68,7 +67,7 @@
   <!-- Page Content -->
   <div class="container">
 
-  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Thumbnail Gallery</h1>
+  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Album List</h1>
 
   <hr class="mt-2 mb-5">
 
@@ -179,8 +178,8 @@
 </body>
 
 </html>
- --%>
- <!DOCTYPE html>
+
+<%--  <!DOCTYPE html>
 <html>
 
 <head>
@@ -200,12 +199,12 @@
                 <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
             </div>
             <div class="row photos">
-               <!--  <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://taegon.kim/wp-content/uploads/2018/05/image-5.png" data-lightbox="photos"><img class="img-fluid" src="https://taegon.kim/wp-content/uploads/2018/05/image-5.png"></a></div>
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://taegon.kim/wp-content/uploads/2018/05/image-5.png" data-lightbox="photos"><img class="img-fluid" src="https://taegon.kim/wp-content/uploads/2018/05/image-5.png"></a></div>
                  <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://taegon.kim/wp-content/uploads/2018/05/image-5.png" data-lightbox="photos"><img class="img-fluid" src="https://taegon.kim/wp-content/uploads/2018/05/image-5.png"></a></div>
                   <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://taegon.kim/wp-content/uploads/2018/05/image-5.png" data-lightbox="photos"><img class="img-fluid" src="https://taegon.kim/wp-content/uploads/2018/05/image-5.png"></a></div>
                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://taegon.kim/wp-content/uploads/2018/05/image-5.png" data-lightbox="photos"><img class="img-fluid" src="https://taegon.kim/wp-content/uploads/2018/05/image-5.png"></a></div>
                     <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://taegon.kim/wp-content/uploads/2018/05/image-5.png" data-lightbox="photos"><img class="img-fluid" src="https://taegon.kim/wp-content/uploads/2018/05/image-5.png"></a></div>
-                     <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://taegon.kim/wp-content/uploads/2018/05/image-5.png" data-lightbox="photos"><img class="img-fluid" src="https://taegon.kim/wp-content/uploads/2018/05/image-5.png"></a></div> -->
+                     <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="https://taegon.kim/wp-content/uploads/2018/05/image-5.png" data-lightbox="photos"><img class="img-fluid" src="https://taegon.kim/wp-content/uploads/2018/05/image-5.png"></a></div>
             </div>
         </div>
     </div>
@@ -214,4 +213,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 </body>
 
-</html>
+</html> --%>
