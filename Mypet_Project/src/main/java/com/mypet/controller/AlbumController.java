@@ -25,6 +25,11 @@ public class AlbumController {
 		model.addAttribute("list",service.getList());
 	}
 	
+	@GetMapping("/photo")
+	public void alist(Model model) {
+		model.addAttribute("photo",service.getList());
+	}
+	
 	@PostMapping("/register")
 	public String register(AlbumVO album, RedirectAttributes rttr) {
 		service.register(album);
