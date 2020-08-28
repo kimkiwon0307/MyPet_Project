@@ -28,6 +28,7 @@ public class AlbumController {
 	@GetMapping("/photo")
 	public void alist(Model model) {
 		model.addAttribute("photo",service.getList());
+		System.out.println("test");
 	}
 	
 	@PostMapping("/register")
