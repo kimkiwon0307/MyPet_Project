@@ -22,13 +22,17 @@ public class AlbumController {
 	
 	@GetMapping("/list")
 	public void list(Model model) {
-		model.addAttribute("list",service.getList());
+		model.addAttribute("album",service.getList());
+		System.out.println(service.getList());
 	}
 	
 	@GetMapping("/photo")
 	public void alist(Model model) {
 		model.addAttribute("photo",service.getList());
 		System.out.println("test");
+	}
+	@GetMapping("/register")
+	public void regiseter() {
 	}
 	
 	@PostMapping("/register")
