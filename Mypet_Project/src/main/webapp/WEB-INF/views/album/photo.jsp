@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
 
+<%@include file="../includes/header.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -129,6 +129,8 @@
                 </ul>
             </div>
         </div>
+        
+        <%@include file="../includes/footer.jsp" %>
         <script>
             $(document).ready(function(){
                 $('#lightgallery').lightGallery(); 

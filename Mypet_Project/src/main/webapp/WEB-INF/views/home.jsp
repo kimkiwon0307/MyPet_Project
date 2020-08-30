@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 font-weight-light mb-5">당신의 소중한 추억을 담아보세요!!</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">포토북 만들기</a>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="${root}album/list">포토북 만들기</a>
                     </div>
                 </div>
             </div>
