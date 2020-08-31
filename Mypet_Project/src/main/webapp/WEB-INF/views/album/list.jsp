@@ -7,7 +7,7 @@
   <div class="container">
 
   <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Album List</h1>
-
+  <a href="${root}album/register">앨범 등록</a>
   <hr class="mt-2 mb-5">
 
   <div class="row text-center text-lg-left">

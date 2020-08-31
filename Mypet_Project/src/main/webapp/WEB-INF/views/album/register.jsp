@@ -2,48 +2,62 @@
     pageEncoding="UTF-8"%>
 
 <%@include file="../includes/header.jsp" %>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card border-secondary">
+                        <div class="card-header">
+                            <h3 class="mb-0 my-2">Album Register</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off">
+                                <div class="form-group">
+                                    <label for="inputName">표지</label>
+                                    <input type="text" class="form-control" id="inputName" placeholder="full name">
+                                </div>
+                                 <div class="form-group">
+                                    <label for="inputName">제목</label>
+                                    <input type="text" class="form-control" id="inputName" placeholder="full name">
+                                </div>
+                                 <div class="form-group">
+                                    <label for="inputName">내용</label>
+                                    <input type="text" class="form-control" id="inputName" placeholder="full name">
+                                </div>
+                                
+                                
+                                
+                                
+                              <!--   <div class="form-group">
+                                    <label for="inputEmail3">Email</label>
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="email@gmail.com" required="">
+                                </div> -->
+                               <!--  <div class="form-group">
+                                    <label for="inputPassword3">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="password" title="At least 6 characters with letters and numbers" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputVerify3">Verify</label>
+                                    <input type="password" class="form-control" id="inputVerify3" placeholder="password (again)" required="">
+                                </div> -->
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg float-right">등록</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/row-->
 
-  <!-- Page Content -->
-  <div class="container">
-
-  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Album Register</h1>
-
-  <hr class="mt-2 mb-5">
-
-  <div class="row text-center text-lg-left">
- 
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">앨범 표지 </label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleInputEmail1">앨범 제목</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-  </div>
-
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
 </div>
+<!--/container-->
 
-
-<hr class="mt-2 mb-5">
  
  <%@include file="../includes/footer.jsp" %>
 
