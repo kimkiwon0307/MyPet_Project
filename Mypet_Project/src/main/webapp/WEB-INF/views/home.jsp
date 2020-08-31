@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
-<%--  <link href="<%=cp%>/resources/home/css/styles.css" rel="stylesheet" /> --%>
+ <link href="<%=cp%>/resources/home/css/styles.css" rel="stylesheet" />
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -67,3 +67,5 @@
         <script src="<%=cp%>/resources/home/js/scripts.js"></script>
     </body>
 </html>
+
+ 
