@@ -2,6 +2,21 @@
     pageEncoding="UTF-8"%>
 
 <%@include file="../includes/header.jsp" %>
+
+<!-- font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+ <!-- Header -->
+<style>
+div {
+  font-family: "Sofia";
+  font-size: 22px;
+}
+</style>
+
+  <div id="header" style="border:solid;height:350px;background-image:url(https://cdn.pixabay.com/photo/2017/04/11/15/55/animals-2222007__340.jpg);">
+  </div>
+
+
 <div class="container py-5">
     <div class="row">
         <div class="col-md-12">

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@include file="../includes/header.jsp" %>
+<!-- font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
  <!-- Header -->
 <style>
@@ -20,7 +21,7 @@ div {
 
   <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Album List</h1>
   <hr class="mt-2 mb-5">
-<%--   <a href="${root}album/register">앨범 등록</a> --%>
+
 
   <div class="row text-center text-lg-left">
  
@@ -47,7 +48,7 @@ div {
   <!-- Bootstrap core JavaScript -->
   <script src="<%=cp%>/resources/album/list/vendor/jquery/jquery.min.js"></script>
   <script src="<%=cp%>/resources/album/list/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+ 
 </body>
 
 </html>
