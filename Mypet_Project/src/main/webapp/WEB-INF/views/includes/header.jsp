@@ -54,13 +54,3 @@
     </div>
   </nav>
 
-  <!-- Header -->
-  <header class="bg-primary py-5 mb-5">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-lg-12">
-         <img src="https://cdn.pixabay.com/photo/2017/11/24/10/43/album-2974646__340.jpg">
-        </div>
-      </div>
-    </div>
-  </header>
