@@ -44,7 +44,7 @@ body{
    <!-- 앨범 사이 --> 
     </div>
     <div style="width:50px;"></div>
-    <!-- /앨범 사이 -->
+    <!-- 앨범 사이 -->
  </c:forEach>
   <!-- /album리스트  -->
   
