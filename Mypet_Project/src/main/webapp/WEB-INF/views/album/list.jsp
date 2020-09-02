@@ -15,7 +15,7 @@ body{
 }
 </style>
 
-
+ <!-- 헤더  -->
   <div id="header" style="border:solid;height:400px;background-image: url(https://cdn.pixabay.com/photo/2018/10/05/18/05/dachshund-3726491__340.jpg);">
   </div>
 	
@@ -28,16 +28,26 @@ body{
 
   <div class="row text-center text-lg-left">
  
+ <!-- album리스트  -->
  <c:forEach items="${album}" var="album">
-    <div class="col-lg-3 col-md-4 col-6" style="border: solid 1px;text-align: center; margin-top:20px; margin-rigth:20px">
-     <div><a href="${root}album/photo" class="d-block mb-4 h-100">
+    <div class="col-lg-3 col-md-4 col-6" style="border: solid 1px;text-align: center; margin-top:20px; border:chocolate solid 10px">
+      <div><a href="${root}album/photo" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" 
             src = "https://cdn.pixabay.com/photo/2016/01/05/17/51/dog-1123016__340.jpg" alt=""
-            style="height: 165px;border: solid; margin-top:10px">
+            style="height: 165px;border:green solid 10px; margin-top:10px; ">
         </a></div>
-      <div style="border-top: solid;text-align: center;"><c:out value='${album.a_title}'/></div>
+     <!-- 제목 div -->
+      <div style="border-top: solid;text-align: center;"><c:out value='${album.a_title}'/>
+      </div>
+     <!-- //제목 div -->
+ 
+   <!-- 앨범 사이 --> 
     </div>
+    <div style="width:50px;"></div>
+    <!-- /앨범 사이 -->
  </c:forEach>
+  <!-- /album리스트  -->
+  
  <!-- add_album -->
   <div id="add_Album" style="border: solid 1px;text-align: center; margin-top:20px; margin-rigth:20px; width:285px">
   <a href="${root}album/register"><img class="img-fluid img-thumbnail" src = "https://cdn.pixabay.com/photo/2016/01/05/17/51/dog-1123016__340.jpg" alt=""
