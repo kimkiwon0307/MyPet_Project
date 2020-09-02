@@ -27,23 +27,19 @@ div {
                             <h3 class="mb-0 my-2">Album Register</h3>
                         </div>
                         <div class="card-body">
-                            <form class="form" role="form" autocomplete="off">
+                            <form class="form" role="form" action="<%=cp%>/album/register" method="post" >
                                 <div class="form-group">
                                     <label for="inputName">표지</label>
-                                    <input type="text" class="form-control" id="inputName" placeholder="full name">
+                                    <input type="text" class="form-control" id="inputName" name="a_photo" placeholder="full name">
                                 </div>
                                  <div class="form-group">
                                     <label for="inputName">제목</label>
-                                    <input type="text" class="form-control" id="inputName" placeholder="full name">
+                                    <input type="text" class="form-control" id="inputName" name="a_title" placeholder="full name">
                                 </div>
                                  <div class="form-group">
                                     <label for="inputName">내용</label>
-                                    <input type="text" class="form-control" id="inputName" placeholder="full name">
+                                    <input type="text" class="form-control" id="inputName" name="a_content" placeholder="full name">
                                 </div>
-                                
-                                
-                                
-                                
                               <!--   <div class="form-group">
                                     <label for="inputEmail3">Email</label>
                                     <input type="text" class="form-control" id="inputEmail3" placeholder="email@gmail.com" required="">

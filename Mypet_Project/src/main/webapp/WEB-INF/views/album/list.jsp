@@ -10,6 +10,9 @@ div {
   font-family: "Sofia";
   font-size: 22px;
 }
+body{
+	background-color : antiquewhite;
+}
 </style>
 
 
@@ -35,12 +38,35 @@ div {
       <div style="border-top: solid;text-align: center;"><c:out value='${album.a_title}'/></div>
     </div>
  </c:forEach>
- 
+ <!-- add_album -->
   <div id="add_Album" style="border: solid 1px;text-align: center; margin-top:20px; margin-rigth:20px; width:285px">
   <a href="${root}album/register"><img class="img-fluid img-thumbnail" src = "https://cdn.pixabay.com/photo/2016/01/05/17/51/dog-1123016__340.jpg" alt=""
             style="height: 165px;border: solid; margin-top:35px"></a>
-   </div>
+   </div> <!-- /add_album -->
   </div>
+  
+  <!-- modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div><!-- /modal -->
+  
+  
 </div>
 <hr class="mt-2 mb-5">
   <%@include file="../includes/footer.jsp" %>
@@ -48,6 +74,30 @@ div {
   <!-- Bootstrap core JavaScript -->
   <script src="<%=cp%>/resources/album/list/vendor/jquery/jquery.min.js"></script>
   <script src="<%=cp%>/resources/album/list/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 	
+  <script>
+
+			$(document).ready(function() {
+
+				var result = '<c:out value="${result}"/>';
+
+				console.log(result);
+
+				checkModal(result);
+
+				function checkModal(result) {
+
+					if (result === '') {
+						return;
+					}else
+					{
+						$(".modal-body").html("게시글등록");
+					}
+					$("#myModal").modal("show");
+				}
+			});
+		</script>
+ 
  
 </body>
 
