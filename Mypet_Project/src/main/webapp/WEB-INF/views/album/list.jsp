@@ -34,7 +34,7 @@ body{
       <div><a href="${root}album/photo" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" 
             src = "https://cdn.pixabay.com/photo/2016/01/05/17/51/dog-1123016__340.jpg" alt=""
-            style="height: 165px;border:green solid 10px; margin-top:10px; ">
+            style="height: 165px; border:lightpink solid 10px; margin-top:10px; ">
         </a></div>
      <!-- 제목 div -->
       <div style="border-top: solid;text-align: center;"><c:out value='${album.a_title}'/>
