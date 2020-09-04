@@ -34,7 +34,7 @@ div {
                                 </div>
                                  <div class="form-group">
                                     <label for="inputName">제목</label>
-                                    <input type="text" class="form-control" id="inputName" name="a_title" placeholder="full name">
+                                    <input type="text" class="form-control" id="inputName" name="a_title" value='<c:out value="${album.a_title}"/>'>
                                 </div>
                                  <div class="form-group">
                                     <label for="inputName">내용</label>
