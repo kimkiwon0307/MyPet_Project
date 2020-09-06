@@ -40,10 +40,10 @@ div {
                                     <label for="inputName">내용</label>
                                     <input type="text" class="form-control" id="inputName" name="a_content" value='<c:out value"${album.a_content}"/>'> 
                                 </div>
-                              <!--   <div class="form-group">
+                                <div class="form-group">
                                     <label for="inputEmail3">Email</label>
                                     <input type="text" class="form-control" id="inputEmail3" placeholder="email@gmail.com" required="">
-                                </div> -->
+                                </div>
                                <!--  <div class="form-group">
                                     <label for="inputPassword3">Password</label>
                                     <input type="password" class="form-control" id="inputPassword3" placeholder="password" title="At least 6 characters with letters and numbers" required="">
