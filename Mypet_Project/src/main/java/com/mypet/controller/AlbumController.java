@@ -27,9 +27,8 @@ public class AlbumController {
 	}
 	
 	@GetMapping("/photo")
-	public void alist(Model model) {
+	public void photo(Model model) {
 		model.addAttribute("photo",service.getList());
-		System.out.println("test");
 	}
 
 	@GetMapping("/register")
@@ -43,9 +42,10 @@ public class AlbumController {
 		return "redirect:/album/list";
 	}
 	
-	@GetMapping({"/get","/modify"})
+	@GetMapping({"/get","/modify","/photo"})
 	public void get(@RequestParam("a_no")int a_no, Model model) {
 		model.addAttribute("album",service.get(a_no));
+	    System.out.println(service.get(a_no));
 	}
 	
 	@PostMapping("/modify")
