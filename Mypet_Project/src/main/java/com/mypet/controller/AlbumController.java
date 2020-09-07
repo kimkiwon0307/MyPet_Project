@@ -23,7 +23,6 @@ public class AlbumController {
 	@GetMapping("/list")
 	public void list(Model model) {
 		model.addAttribute("album",service.getList());
-		System.out.println(service.getList());
 	}
 	
 	@GetMapping("/photo")
@@ -42,14 +41,15 @@ public class AlbumController {
 		return "redirect:/album/list";
 	}
 	
-	@GetMapping({"/get","/modify","/photo"})
+	@GetMapping({"/get","/modify"})
 	public void get(@RequestParam("a_no")int a_no, Model model) {
 		model.addAttribute("album",service.get(a_no));
-	    System.out.println(service.get(a_no));
 	}
 	
 	@PostMapping("/modify")
 	public String modify(AlbumVO album, RedirectAttributes rttr) {
+		
+		System.out.println(album.toString());
 		
 		if(service.modify(album)) {
 			rttr.addFlashAttribute("result","success");

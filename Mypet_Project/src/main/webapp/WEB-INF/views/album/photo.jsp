@@ -148,14 +148,29 @@
                         </a>
                     </li>
                 </ul>
+            <button id="uphoto">수정하기</button>
             </div>
         </div>
         
         <%@include file="../includes/footer.jsp" %>
         <script>
+             
+
             $(document).ready(function(){
                 $('#lightgallery').lightGallery(); 
+                
+            	alert("${photo}");
+                
+                $('#uphoto').on("click",function(){
+                	
+                	self.location = "/mypet/album/list";
+                	
+                });
+            
+                
             });
+            
+            
         </script>
     </body>    
 </html>

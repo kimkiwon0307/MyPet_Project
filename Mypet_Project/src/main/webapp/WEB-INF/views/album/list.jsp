@@ -90,14 +90,14 @@ body{
 			$(document).ready(function() {
 
 				var result = '<c:out value="${result}"/>';
-
-				console.log(result);
-
+								
 				checkModal(result);
-
+	
+				history.replaceState({},null,null);
+				
 				function checkModal(result) {
 
-					if (result === '') {
+					if (result === '' || history.state) {
 						return;
 					}else
 					{

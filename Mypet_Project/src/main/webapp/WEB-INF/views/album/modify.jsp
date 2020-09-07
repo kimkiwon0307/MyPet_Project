@@ -28,6 +28,10 @@ div {
                         </div>
                         <div class="card-body">
                             <form class="form" role="form" action="<%=cp%>/album/modify" method="post" >
+                            	<div class="form-group">
+                            		<label for="inputName">번호</label>
+                            		<input type="text" class="form-control" id="inputName" name="a_no" value='<c:out value="${album.a_no }"/>' readonly="readonly">
+                            	</div>
                                 <div class="form-group">
                                     <label for="inputName">표지</label>
                                     <input type="text" class="form-control" id="inputName" name="a_photo" value='<c:out value="${album.a_photo}"/>'>

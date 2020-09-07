@@ -5,6 +5,7 @@
 <% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
 <c:url var='root' value='/'></c:url>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
