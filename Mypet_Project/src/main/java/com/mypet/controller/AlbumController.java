@@ -49,8 +49,6 @@ public class AlbumController {
 	@PostMapping("/modify")
 	public String modify(AlbumVO album, RedirectAttributes rttr) {
 		
-		System.out.println(album.toString());
-		
 		if(service.modify(album)) {
 			rttr.addFlashAttribute("result","success");
 		}
