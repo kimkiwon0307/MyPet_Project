@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@include file="../includes/header.jsp" %>
 
 <!-- font -->
@@ -44,20 +44,16 @@ div {
                                     <label for="inputName">내용</label>
                                     <input type="text" class="form-control" id="inputName" name="a_content" value='<c:out value="${album.a_content}"/>'>
                                 </div>
-                              <!--   <div class="form-group">
-                                    <label for="inputEmail3">Email</label>
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="email@gmail.com" required="">
-                                </div> -->
-                               <!--  <div class="form-group">
-                                    <label for="inputPassword3">Password</label>
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="password" title="At least 6 characters with letters and numbers" required="">
-                                </div>
+                            <%--     <div class="form-group">
+                                    <label for="inputName">수정된 날짜</label>
+                                    <input type="text" class="form-control" id="inputName" name="a_udate" 
+                                    value='<fmt:formatDate pattern = "yyyy/MM/dd" value="${album_a_udate}"/>' readonly="readonly"/>
+                                </div> 
+                               --%>
                                 <div class="form-group">
-                                    <label for="inputVerify3">Verify</label>
-                                    <input type="password" class="form-control" id="inputVerify3" placeholder="password (again)" required="">
-                                </div> -->
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-lg float-right">등록</button>
+                                    <button type="submit" class="btn btn-success btn-lg float-right">목록</button>
+                                    <button type="submit" class="btn btn-success btn-lg float-right">수정</button>
+                                <!-- <button type="submit" class="btn btn-success btn-lg float-right">삭제</button> -->
                                 </div>
                             </form>
                         </div>

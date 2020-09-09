@@ -31,7 +31,7 @@ body{
  <!-- album리스트  -->
  <c:forEach items="${album}" var="album">
     <div class="col-lg-3 col-md-4 col-6" style="border: solid 1px;text-align: center; margin-top:20px; border:chocolate solid 10px">
-      <div><a href="${root}album/photo" class="d-block mb-4 h-100">
+      <div><a href="${root}/album/photo?a_no=${album.a_no}" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" 
             src = "https://cdn.pixabay.com/photo/2016/01/05/17/51/dog-1123016__340.jpg" alt=""
             style="height: 165px; border:lightpink solid 10px; margin-top:10px; ">
@@ -50,7 +50,7 @@ body{
   
  <!-- add_album -->
   <div id="add_Album" style="border: solid 1px;text-align: center; margin-top:20px; margin-rigth:20px; width:285px">
-  <a href="${root}album/register"><img class="img-fluid img-thumbnail" src = "https://cdn.pixabay.com/photo/2016/01/05/17/51/dog-1123016__340.jpg" alt=""
+  <a href="${root}/album/register"><img class="img-fluid img-thumbnail" src = "https://cdn.pixabay.com/photo/2016/01/05/17/51/dog-1123016__340.jpg" alt=""
             style="height: 165px;border: solid; margin-top:35px"></a>
    </div> <!-- /add_album -->
   </div>

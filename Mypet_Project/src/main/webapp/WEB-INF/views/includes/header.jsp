@@ -3,7 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <% String cp = request.getContextPath(); %> <%--ContextPath 선언 --%>
-<c:url var='root' value='/'></c:url>
+<%-- <c:url var='root' value='/'></c:url>  이거 쓰면 jssession 붙음--%>
+<c:set var='root' value="${pageContext.request.contextPath }"/>
 
 
 <!DOCTYPE html>

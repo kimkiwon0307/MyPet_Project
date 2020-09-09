@@ -148,22 +148,37 @@
                         </a>
                     </li>
                 </ul>
-            <button id="uphoto">수정하기</button>
+            	<button id="uphoto">수정하기</button>
+             	<button id="dphoto">삭제하기</button>
+             	<button id="lphoto">리스트</button>
             </div>
         </div>
         
         <%@include file="../includes/footer.jsp" %>
         <script>
-             
 
             $(document).ready(function(){
-                $('#lightgallery').lightGallery(); 
+				
+            	var a_no = ${a_no}; // model에 담긴 a_no 가져온다.
+            	
+            	
+            	
+            	$('#lightgallery').lightGallery(); 
                 
-            	alert("${photo}");
-                
-                $('#uphoto').on("click",function(){
                 	
-                	self.location = "/mypet/album/list";
+                	
+                $('button').on("click",function(e){
+                	
+                	var id = $(this).attr("id");
+                	
+                	console.log(id);
+                	if( id === 'uphoto'){
+                		location.href="modify?a_no="+ a_no;
+                	}else if(id === 'dphoto'){
+                		location.href="remove?a_no="+a_no;
+                	}else if(id === 'lphoto'){
+                		location.href="list";
+                	}
                 	
                 });
             
