@@ -37,19 +37,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="${root}">Home
+        <%--   <li class="nav-item active">
+            <a class="nav-link" href="${root}">홈
               <span class="sr-only">(current)</span>
-            </a>
+            </a> --%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Album</a>
+            <a class="nav-link" href="#">앨범</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="#">자유</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#">질문</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">로그인</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">회원가입</a>
           </li>
         </ul>
       </div>
