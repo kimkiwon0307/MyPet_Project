@@ -2,34 +2,34 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mypet.mapper.AlbumMapper">
+<mapper namespace="com.mypet.mapper.QuestionBoardMapper">
 	
-	 <select id="getList" resultType="com.mypet.domain.AlbumVO">
+	 <select id="getList" resultType="com.mypet.domain.QuestionVO">
 	 	<![CDATA[
-	 		select * from album where a_no > 0
+	 		select * from question where q_no > 0
 	 		]]>
 	 </select>
 	
 	<insert id="insert">
-		insert into album(a_no, a_title, a_content, a_photo)
-		values (seq_album.nextval, #{a_title}, #{a_content}, #{a_content})
+		insert into question(q_no, q_title, q_content, q_photo)
+		values (seq_question.nextval, #{q_title}, #{q_content}, #{q_content})
 	</insert>
 	
-	<select id="read" resultType="com.mypet.domain.AlbumVO">
-		select * from album where a_no = #{a_no}
+	<select id="read" resultType="com.mypet.domain.QuestionVO">
+		select * from question where q_no = #{q_no}
 	</select>
 	
 	<delete id="delete" >
-		delete album where a_no = #{a_no}
+		delete question where q_no = #{q_no}
 	</delete>
 	
 	<update id="update">
-		update album
-		set a_title = #{a_title},
-		a_content = #{a_content},
-		a_photo = #{a_photo},
-		a_udate = sysdate
-		where a_no = #{a_no}
+		update question
+		set q_title = #{q_title},
+		q_content = #{q_content},
+		q_photo = #{q_photo},
+		q_udate = sysdate
+		where q_no = #{q_no}
 	</update>
 
 
