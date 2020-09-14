@@ -11,11 +11,11 @@
 	 </select>
 	
 	<insert id="insert">
-		insert into free(f_no, f_title, f_content, f_photo) 
-		values(seq_free.nextval, #{f_title}, #{f_content}, #{f_photo})
+		insert into free(f_no, f_title, f_content, f_photo, f_writer) 
+		values(seq_free.nextval, #{f_title}, #{f_content}, #{f_photo}, #{f_writer)
 	</insert>
 	
-	<select id="read" resultType="com.mypet.domain.freeVO">
+	<select id="read" resultType="com.mypet.domain.FreeVO">
 		select * from free where f_no = #{f_no}
 	</select>
 	
@@ -28,6 +28,7 @@
 		set f_title = #{f_title},
 		f_content = #{f_content},
 		f_photo = #{f_photo},
+		f_writer = #{f_writer},
 		f_udate = sysdate
 		where f_no = #{f_no}
 	</update>
