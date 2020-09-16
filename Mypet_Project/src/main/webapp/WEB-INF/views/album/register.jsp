@@ -18,6 +18,9 @@ div {
 
 
 <div class="container py-5">
+  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Album Register</h1>
+  <hr class="mt-2 mb-5">
+
     <div class="row">
         <div class="col-md-12">
             <div class="row">
@@ -53,7 +56,10 @@ div {
                                     <input type="password" class="form-control" id="inputVerify3" placeholder="password (again)" required="">
                                 </div> -->
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-lg float-right">등록</button>
+                                    <button type="submit" class="btn btn-success btn-lg float-left">등록</button>
+                                </div>
+                                  <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg float-right">목록</button>
                                 </div>
                             </form>
                         </div>

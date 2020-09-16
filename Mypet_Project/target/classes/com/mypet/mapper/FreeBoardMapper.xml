@@ -12,7 +12,7 @@
 	
 	<insert id="insert">
 		insert into free(f_no, f_title, f_content, f_photo, f_writer) 
-		values(seq_free.nextval, #{f_title}, #{f_content}, #{f_photo}, #{f_writer)
+		values(seq_free.nextval, #{f_title}, #{f_content}, #{f_photo}, #{f_writer})
 	</insert>
 	
 	<select id="read" resultType="com.mypet.domain.FreeVO">
