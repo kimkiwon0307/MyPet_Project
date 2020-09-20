@@ -92,7 +92,7 @@ body{
 
 				var result = '<c:out value="${result}"/>';
 								
-				checkModal(result);
+				/* checkModal(result); */
 	
 				history.replaceState({},null,null);
 				
