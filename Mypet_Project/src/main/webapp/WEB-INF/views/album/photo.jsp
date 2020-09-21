@@ -45,6 +45,8 @@
     
     
         <div class="container" style="margin-top:40px;">
+         <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Album Photo</h1>
+ 	 <hr class="mt-2 mb-5">
             <div class="demo-gallery">
                 <ul id="lightgallery" class="list-unstyled row">
                     <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2" data-responsive="https://sachinchoolur.github.io/lightgallery.js/static/img/1-1600.jpg" data-src="https://sachinchoolur.github.io/lightgallery.js/static/img/1-1600.jpg" data-sub-html="<h4>Fading Light</h4><p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>">
@@ -153,7 +155,7 @@
              	<button id="lphoto">리스트</button>
             </div>
         </div>
-        
+        <hr class="mt-2 mb-5">
         <%@include file="../includes/footer.jsp" %>
         <script>
 

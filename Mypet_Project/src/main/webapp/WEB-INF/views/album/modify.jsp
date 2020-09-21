@@ -18,13 +18,16 @@ div {
 
 
 <div class="container py-5">
+    <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Album Modify</h1>
+ 	 <hr class="mt-2 mb-5">
+
     <div class="row">
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="card border-secondary">
                         <div class="card-header">
-                            <h3 class="mb-0 my-2">Album Register</h3>
+                            <h3 class="mb-0 my-2">Album Modify</h3>
                         </div>
                         <div class="card-body">
                             <form class="form" role="form" action="<%=cp%>/album/modify" method="post" >
@@ -69,7 +72,7 @@ div {
 </div>
 <!--/container-->
 
- 
+ <hr class="mt-2 mb-5">
  <%@include file="../includes/footer.jsp" %>
 
   <!-- Bootstrap core JavaScript -->

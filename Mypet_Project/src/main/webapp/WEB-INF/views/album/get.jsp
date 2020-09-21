@@ -69,7 +69,7 @@ div {
 </div>
 <!--/container-->
 
- 
+ <hr class="mt-2 mb-5">
  <%@include file="../includes/footer.jsp" %>
 
   <!-- Bootstrap core JavaScript -->

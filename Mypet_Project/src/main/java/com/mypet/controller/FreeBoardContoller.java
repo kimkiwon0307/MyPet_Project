@@ -35,7 +35,7 @@ public class FreeBoardContoller {
 		return "redirect:/free/list";
 	}
 	
-	@GetMapping("/get")
+	@GetMapping({"/get","/modify"})
 	public void get(@RequestParam("f_no")int f_no, Model model) {
 		model.addAttribute("free", service.get(f_no));
 	}
@@ -45,6 +45,7 @@ public class FreeBoardContoller {
 	public String modify(FreeVO free, RedirectAttributes rttr) {
 		if(service.modify(free)) {
 			rttr.addFlashAttribute("result","success");
+			System.out.println("성공");
 		}
 		return "redirect:/free/list";
 	}
