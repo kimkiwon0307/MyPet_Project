@@ -41,7 +41,7 @@ body{
       </div>
      <!-- //제목 div -->
  
-   <!-- 앨범 사이 --> 
+   <!-- 앨범 사이 간격--> 
     </div>
     <div style="width:50px;"></div>
     <!-- 앨범 사이 -->
@@ -54,29 +54,32 @@ body{
             style="height: 165px;border: solid; margin-top:35px"></a>
    </div> <!-- /add_album -->
   </div>
-  
-  <!-- modal -->
-  <div class="modal" tabindex="-1" role="dialog" id="myModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div><!-- /modal -->
-  
-  
+
+	<!-- modal -->
+	<div class="modal" tabindex="-1" role="dialog" id="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Modal body text goes here.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /modal -->
+
+
 </div>
 <hr class="mt-2 mb-5">
   <%@include file="../includes/footer.jsp" %>
@@ -86,13 +89,11 @@ body{
   <script src="<%=cp%>/resources/album/list/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
  	
   <script>
-
-  
 			$(document).ready(function() {
 
 				var result = '<c:out value="${result}"/>';
 								
-				/* checkModal(result); */
+				 checkModal(result); 
 	
 				history.replaceState({},null,null);
 				
