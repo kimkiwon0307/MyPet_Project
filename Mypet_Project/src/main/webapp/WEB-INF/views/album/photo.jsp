@@ -150,9 +150,8 @@
                         </a>
                     </li>
                 </ul>
-            	<button id="uphoto">수정하기</button>
-             	<button id="dphoto">삭제하기</button>
-             	<button id="lphoto">리스트</button>
+            	<button id="uphoto">수정</button>
+             	<button id="lphoto">목록</button>
             </div>
         </div>
         <hr class="mt-2 mb-5">

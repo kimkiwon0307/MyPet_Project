@@ -33,7 +33,7 @@ div {
                             <form class="form" role="form" action="<%=cp%>/album/modify" method="post" >
                             	<div class="form-group">
                             		<label for="inputName">번호</label>
-                            		<input type="text" class="form-control" id="inputName" name="a_no" value='<c:out value="${album.a_no }"/>' readonly="readonly">
+                            		<input type="text" class="form-control" id="a_no" name="a_no" value='<c:out value="${album.a_no }"/>' readonly="readonly">
                             	</div>
                                 <div class="form-group">
                                     <label for="inputName">표지</label>
@@ -54,9 +54,9 @@ div {
                                 </div> 
                                --%>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-lg float-right">목록</button>
-                                    <button type="submit" class="btn btn-success btn-lg float-right">수정</button>
-                                <!-- <button type="submit" class="btn btn-success btn-lg float-right">삭제</button> -->
+                                    <button type="button" id="listBtn"   class="btn btn-success btn-lg float-right">목록</button>
+                                    <button type="submit" id="updateBtn" class="btn btn-success btn-lg float-right">수정</button>
+                                    <button type="button" id="deleteBtn" class="btn btn-danger btn-lg float-right">삭제</button> 
                                 </div>
                             </form>
                         </div>
@@ -78,6 +78,26 @@ div {
   <!-- Bootstrap core JavaScript -->
   <script src="<%=cp%>/resources/album/list/vendor/jquery/jquery.min.js"></script>
   <script src="<%=cp%>/resources/album/list/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			
+			var form = $("form");
+			
+			$("#listBtn").on("click",function(){
+				
+				self.location="/mypet/album/list";
+				
+			});
+			
+			$("#deleteBtn").on("click",function(){
+				form.attr("action","/mypet/album/remove");
+				form.submit();
+			});
+			
+		})
+	
+	</script>
 
 </body>
 
