@@ -2,6 +2,7 @@ package com.mypet.service;
 
 import java.util.List;
 
+import com.mypet.domain.Criteria;
 import com.mypet.domain.FreeVO;
 
 public interface FreeBoardService {
@@ -15,4 +16,6 @@ public interface FreeBoardService {
 	public boolean remove(int f_no);
 	
 	public List<FreeVO> getList();
+	
+	public List<FreeVO> getList(Criteria cri);
 }

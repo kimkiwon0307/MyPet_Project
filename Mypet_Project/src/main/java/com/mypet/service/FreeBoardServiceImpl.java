@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.mypet.domain.Criteria;
 import com.mypet.domain.FreeVO;
 import com.mypet.mapper.FreeBoardMapper;
 
@@ -39,6 +40,12 @@ public class FreeBoardServiceImpl implements FreeBoardService{
 	@Override
 	public List<FreeVO> getList() {
 		return mapper.getList();
+	}
+
+	@Override
+	public List<FreeVO> getList(Criteria cri) {
+		// TODO Auto-generated method stub
+		return mapper.getListWithPaging(cri);
 	}
 
 }

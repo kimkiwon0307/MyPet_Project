@@ -9,6 +9,20 @@
 	 		select * from free where f_no > 0
 	 		]]>
 	 </select>
+	 
+	 <select id="getListWithPaging" resultType="com.mypet.domain.FreeVO">
+	 		<![CDATA[
+	 			select f_no, f_title, f_content, f_photo, f_writer, f_date, f_udate
+	 			from(
+	 			select /*+INDEX_DESC(free pk_free) */
+	 				rownum rn, f_no, f_title, f_content, f_photo, f_writer, f_date, f_udate
+	 			from
+	 				free
+	 			where rownum <= #{pageNum} *#{amount}
+	 			)
+	 			where rn > (#{pageNum} -1 ) * #{amount}
+	 		]]>
+	 </select>
 	
 	<insert id="insert">
 		insert into free(f_no, f_title, f_content, f_photo, f_writer) 

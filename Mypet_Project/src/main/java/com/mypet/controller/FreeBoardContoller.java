@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.mypet.domain.Criteria;
 import com.mypet.domain.FreeVO;
 import com.mypet.service.FreeBoardService;
 
@@ -20,10 +21,15 @@ public class FreeBoardContoller {
 	
 	private FreeBoardService service;
 	
+//	@GetMapping("/list")
+//	public void list(Model model) {
+//
+//		model.addAttribute("list",service.getList());
+//	}
+	
 	@GetMapping("/list")
-	public void list(Model model) {
-
-		model.addAttribute("list",service.getList());
+	public void list(Criteria cri, Model model) {
+		model.addAttribute("list",service.getList(cri));
 	}
 	
 	@GetMapping("/register")
