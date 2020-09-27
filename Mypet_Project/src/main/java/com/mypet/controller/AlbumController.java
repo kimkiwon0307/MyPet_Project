@@ -29,7 +29,6 @@ public class AlbumController {
 	public void photo(@RequestParam(value="a_no")int a_no, Model model) {
 		model.addAttribute("photo",service.get(a_no));
 		model.addAttribute("a_no",a_no);
-		System.out.println(a_no);
 	}
 
 	@GetMapping("/register")
