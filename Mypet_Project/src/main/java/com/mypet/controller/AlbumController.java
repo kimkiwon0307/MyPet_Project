@@ -53,7 +53,7 @@ public class AlbumController {
 		
 		if(service.modify(album)) {
 			rttr.addFlashAttribute("result","success");
-		}
+		}else if(true) {};
 		return "redirect:/album/list";
 	}
 	
