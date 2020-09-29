@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mypet.domain.Criteria;
 import com.mypet.domain.FreeVO;
+import com.mypet.domain.PageDTO;
 import com.mypet.service.FreeBoardService;
 
 import lombok.AllArgsConstructor;
@@ -30,6 +31,7 @@ public class FreeBoardContoller {
 	@GetMapping("/list")
 	public void list(Criteria cri, Model model) {
 		model.addAttribute("list",service.getList(cri));
+		model.addAttribute("pageMaker",new PageDTO(cri,123));
 	}
 	
 	@GetMapping("/register")

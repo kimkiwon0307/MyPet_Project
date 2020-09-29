@@ -64,5 +64,4 @@ public class AlbumController {
 		}
 		return "redirect:/album/list";
 	}
-	
 }
