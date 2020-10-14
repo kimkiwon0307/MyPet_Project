@@ -44,8 +44,13 @@ public class FreeBoardServiceImpl implements FreeBoardService{
 
 	@Override
 	public List<FreeVO> getList(Criteria cri) {
-		// TODO Auto-generated method stub
 		return mapper.getListWithPaging(cri);
+	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		// TODO Auto-generated method stub
+		return mapper.getTotalCount(cri);
 	}
 
 }

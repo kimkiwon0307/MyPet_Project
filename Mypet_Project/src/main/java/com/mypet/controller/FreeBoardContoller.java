@@ -31,7 +31,12 @@ public class FreeBoardContoller {
 	@GetMapping("/list")
 	public void list(Criteria cri, Model model) {
 		model.addAttribute("list",service.getList(cri));
-		model.addAttribute("pageMaker",new PageDTO(cri,123));
+		//model.addAttribute("pageMaker",new PageDTO(cri,123));
+		
+		int total = service.getTotal(cri);
+		
+		model.addAttribute("pageMaker",new PageDTO(cri,total));
+		
 	}
 	
 	@GetMapping("/register")
@@ -44,8 +49,10 @@ public class FreeBoardContoller {
 	}
 	
 	@GetMapping({"/get","/modify"})
-	public void get(@RequestParam("f_no")int f_no, Model model) {
+	public void get(@RequestParam("f_no")int f_no,@RequestParam("pageNum")int pageNum, @RequestParam("amount")int amount, Model model) {
 		model.addAttribute("free", service.get(f_no));
+		model.addAttribute("pageNum",pageNum);
+		model.addAttribute("amount",amount);
 	}
 	
 	
@@ -53,7 +60,6 @@ public class FreeBoardContoller {
 	public String modify(FreeVO free, RedirectAttributes rttr) {
 		if(service.modify(free)) {
 			rttr.addFlashAttribute("result","success");
-			System.out.println("성공");
 		}
 		return "redirect:/free/list";
 	}

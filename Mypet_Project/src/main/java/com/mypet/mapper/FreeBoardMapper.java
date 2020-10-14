@@ -19,6 +19,6 @@ public interface FreeBoardMapper {
 	
 	public int update(FreeVO free);
 	
-	
+	public int getTotalCount(Criteria cri);
 	
 }

@@ -18,4 +18,6 @@ public interface FreeBoardService {
 	public List<FreeVO> getList();
 	
 	public List<FreeVO> getList(Criteria cri);
+	
+	public int getTotal(Criteria cri);
 }
