@@ -39,6 +39,12 @@ public class FreeBoardContoller {
 		
 	}
 	
+	@GetMapping("/list2")
+	public void list2(Criteria cri, Model model) {
+		model.addAttribute("list",service.getList());
+	}
+	
+	
 	@GetMapping("/register")
 	public void register(){};
 	
