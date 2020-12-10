@@ -34,7 +34,6 @@ public class FreeBoardContoller {
 		//model.addAttribute("pageMaker",new PageDTO(cri,123));
 		
 		int total = service.getTotal(cri);
-		System.out.println("테스트");
 		model.addAttribute("pageMaker",new PageDTO(cri,total));
 		
 	}
