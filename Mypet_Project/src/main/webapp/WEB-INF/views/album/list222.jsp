@@ -82,7 +82,6 @@ body{
 
 </div>
 <hr class="mt-2 mb-5">
-  <%@include file="../includes/footer.jsp" %>
 
   <!-- Bootstrap core JavaScript -->
   <script src="<%=cp%>/resources/album/list/vendor/jquery/jquery.min.js"></script>
@@ -114,3 +113,4 @@ body{
 </body>
 
 </html>
+  <%@include file="../includes/footer.jsp" %>

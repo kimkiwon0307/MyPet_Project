@@ -28,6 +28,8 @@ public class FreeBoardContoller {
 //		model.addAttribute("list",service.getList());
 //	}
 	
+	
+	
 	@GetMapping("/list")
 	public void list(Criteria cri, Model model) {
 		model.addAttribute("list",service.getList(cri));
