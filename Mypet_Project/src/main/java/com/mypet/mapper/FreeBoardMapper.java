@@ -2,23 +2,20 @@ package com.mypet.mapper;
 
 import java.util.List;
 
-import com.mypet.domain.Criteria;
-import com.mypet.domain.FreeVO;
+import com.mypet.domain.FreeBoardVO;
 
 public interface FreeBoardMapper {
+
+	public List<FreeBoardVO> getList();      // 리스트
 	
-	public List<FreeVO> getList();
+	public void insert(FreeBoardVO free);    // C   
 	
-	public List<FreeVO> getListWithPaging(Criteria cri);
+	public FreeBoardVO read(int f_no);        // R
 	
-	public void insert(FreeVO free);
+	public int update(FreeBoardVO free);     // U
 	
-	public FreeVO read(int f_no);
+	public int delete(int f_no);             // D
 	
-	public int delete(int f_no);
 	
-	public int update(FreeVO free);
-	
-	public int getTotalCount(Criteria cri);
 	
 }
