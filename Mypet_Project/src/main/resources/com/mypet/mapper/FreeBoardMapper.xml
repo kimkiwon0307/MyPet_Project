@@ -32,6 +32,21 @@
 		delete freeboard where f_no = #{f_no}
 	</delete>
 	
+	<select id="getListWithPaging" resultType="com.mypet.domain.FreeBoardVO">
+		<![CDATA[
+			select 
+				f_no, f_title, f_content, f_writer, f_count, f_date, f_udate
+			from
+				( 
+				select /*+INDEX_DESC(freeboard pk_free) */
+					rownum rn, f_no, f_title, f_content, f_writer, f_count, f_date, f_udate
+				from
+					freeboard
+				where rownum <= #{pageNum} * #{amount}
+				)
+			where rn > (#{pageNum } - 1) * #{amount}
+		]]>
+	</select>
 	
 	
 

@@ -2,6 +2,7 @@ package com.mypet.mapper;
 
 import java.util.List;
 
+import com.mypet.domain.Criteria;
 import com.mypet.domain.FreeBoardVO;
 
 public interface FreeBoardMapper {
@@ -16,6 +17,7 @@ public interface FreeBoardMapper {
 	
 	public int delete(int f_no);             // D
 	
+	public List<FreeBoardVO> getListWithPaging(Criteria cri); // 페이징 처리를 위해 추가한다.
 	
 	
 }
