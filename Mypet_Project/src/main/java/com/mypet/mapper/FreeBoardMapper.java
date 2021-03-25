@@ -19,5 +19,6 @@ public interface FreeBoardMapper {
 	
 	public List<FreeBoardVO> getListWithPaging(Criteria cri); // 페이징 처리를 위해 추가한다.
 	
+	public int getTotalCount(Criteria cri); //  총개수 구하기
 	
 }
