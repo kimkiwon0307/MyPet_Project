@@ -42,7 +42,26 @@
 					rownum rn, f_no, f_title, f_content, f_writer, f_count, f_date, f_udate
 				from
 					freeboard
-				where rownum <= #{pageNum} * #{amount}
+				where 
+				]]>
+				
+				<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+					<foreach item='type' collection="typeArr">
+						<trim prefix="OR">
+							<choose>
+								<when test="type == 'T'.toString()">
+									f_title like '%'||#{keyword}||'%'
+								</when>
+								<when test="type == 'W'.toString()">
+									f_writer like '%'||#{keyword}||'%'
+								</when>
+							</choose>
+						</trim>
+					</foreach>
+				</trim>
+				
+			<![CDATA[	
+				rownum <= #{pageNum} * #{amount}
 				)
 			where rn > (#{pageNum } - 1) * #{amount}
 		]]>
@@ -51,6 +70,9 @@
 	<select id="getTotalCount" resultType="int">
 		select count(*) from freeboard where f_no > 0
 	</select>
+	
+	
+	
 	
 
 </mapper>
