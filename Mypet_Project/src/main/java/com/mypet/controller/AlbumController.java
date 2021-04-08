@@ -33,7 +33,7 @@ public class AlbumController {
 	public String register(AlbumVO album, RedirectAttributes r) {
 		
 			service.register(album);
-			r.addFlashAttribute("result","1ok");
+			r.addFlashAttribute("result","ok");
 
 			return "redirect:/album/list";
 	}
@@ -47,7 +47,7 @@ public class AlbumController {
 	public String modify(AlbumVO album, RedirectAttributes rttr) {
 		
 		if(service.modify(album)) {
-			rttr.addFlashAttribute("result","success");
+			rttr.addFlashAttribute("result","suss");
 		}
 		return "redirect:/album/list";
 	}
