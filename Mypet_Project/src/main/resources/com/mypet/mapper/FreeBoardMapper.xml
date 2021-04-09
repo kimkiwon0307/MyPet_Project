@@ -72,6 +72,12 @@
 	</select>
 	
 	
+	<insert id="insertFile" parameterType="hashMap">
+		insert into free_file(
+		
+		)
+	
+	</insert>
 	
 	
 

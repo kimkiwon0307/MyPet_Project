@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mypet.domain.Criteria;
@@ -39,9 +40,10 @@ public class FreeBoardController {
 		
 		int total = service.getTotal(cri);
 
+		System.out.println("민철이바보");
 		model.addAttribute("list", service.getList(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri,total));
-		
+		 
 	}
 	
 	@GetMapping("/register")
@@ -50,9 +52,9 @@ public class FreeBoardController {
 	}
 	
 	@PostMapping("/register")
-	public String register(FreeBoardVO free, RedirectAttributes r) {
+	public String register(FreeBoardVO free, RedirectAttributes r, MultipartHttpServletRequest mpRequest) {
 		
-			service.register(free);
+			service.register(free,mpRequest);
 			r.addFlashAttribute("result","ok");
 
 			return "redirect:/free/list";
@@ -107,7 +109,7 @@ public class FreeBoardController {
 	  @PostMapping("/updateReply") 
 	  public String replyUpdate(ReplyVO reply, Criteria cri) {
 		  
-		  System.out.println("안녕"+ reply.getReply());
+		  System.out.println("�븞�뀞"+ reply.getReply());
 		  
 		int f_no = reply.getF_no();
 		int pageNum = cri.getPageNum();

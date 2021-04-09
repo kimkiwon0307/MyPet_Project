@@ -26,6 +26,7 @@ public class AlbumController {
 	
 	@GetMapping("/register")
 	public void register() {
+	
 		
 	}
 	
