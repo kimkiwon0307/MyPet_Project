@@ -61,7 +61,7 @@ public class FreeBoardServiceImpl implements FreeBoardService{
 	}
 
 	@Override
-	public void register(FreeBoardVO free, MultipartHttpServletRequest mpRequest) {
+	public void register(FreeBoardVO free, MultipartHttpServletRequest mpRequest) throws Exception {
 		
 		mapper.insert(free);
 		

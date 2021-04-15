@@ -23,5 +23,5 @@ public interface FreeBoardService {
 	
 	public int getTotal(Criteria cri);
 	
-	public void register(FreeBoardVO free, MultipartHttpServletRequest mpRequest);
+	public void register(FreeBoardVO free, MultipartHttpServletRequest mpRequest) throws Exception;
 }

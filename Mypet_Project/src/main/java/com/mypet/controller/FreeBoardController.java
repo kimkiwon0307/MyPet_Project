@@ -52,7 +52,7 @@ public class FreeBoardController {
 	}
 	
 	@PostMapping("/register")
-	public String register(FreeBoardVO free, RedirectAttributes r, MultipartHttpServletRequest mpRequest) {
+	public String register(FreeBoardVO free, RedirectAttributes r, MultipartHttpServletRequest mpRequest) throws Exception {
 		
 			service.register(free,mpRequest);
 			r.addFlashAttribute("result","ok");
