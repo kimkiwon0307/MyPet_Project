@@ -1,6 +1,7 @@
 package com.mypet.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -24,4 +25,8 @@ public interface FreeBoardService {
 	public int getTotal(Criteria cri);
 	
 	public void register(FreeBoardVO free, MultipartHttpServletRequest mpRequest) throws Exception;
+	
+//	public List<Map<String, Object>> selectFileList(int f_no) ;
+	
+	
 }

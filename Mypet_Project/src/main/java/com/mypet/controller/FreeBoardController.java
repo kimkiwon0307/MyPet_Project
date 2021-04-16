@@ -1,6 +1,7 @@
 package com.mypet.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,7 +41,6 @@ public class FreeBoardController {
 		
 		int total = service.getTotal(cri);
 
-		System.out.println("민철이바보");
 		model.addAttribute("list", service.getList(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri,total));
 		 
@@ -54,6 +54,7 @@ public class FreeBoardController {
 	@PostMapping("/register")
 	public String register(FreeBoardVO free, RedirectAttributes r, MultipartHttpServletRequest mpRequest) throws Exception {
 		
+		
 			service.register(free,mpRequest);
 			r.addFlashAttribute("result","ok");
 
@@ -62,9 +63,17 @@ public class FreeBoardController {
 	
 	@GetMapping({"/get","/modify"})
 	public void get(int f_no, Model model, @ModelAttribute("cri")Criteria cri) {
+		
 		model.addAttribute("free", service.get(f_no));
+		
 		List<ReplyVO> replyList = replyService.readReply(f_no);
 		model.addAttribute("replyList",replyList);
+		
+		/*
+		 * List<Map<String, Object>> fileList = service.selectFileList(f_no);
+		 * model.addAttribute("file",fileList);
+		 */
+	
 	}
 	
 	@PostMapping("/modify")

@@ -10,7 +10,7 @@
   <h5>Register </h5>
  
  <hr>           
-  <form action="/mypet/free/register" method="post">
+  <form action="/mypet/free/register" method="post" enctype="multipart/form-data">
   
   <div class="form-group">
     <label>제목</label>
@@ -27,10 +27,10 @@
     <input type="text" class="form-control"  name='f_writer'>
   </div>
   
-<!--   <div class="form-group">
+  <div class="form-group">
     <label class="form">첨부 자료 </label>
-     <input type="file" class="form-control-file border" id="f_file">
-  </div> -->
+     <input type="file" class="form-control-file border" name="f_file">
+  </div> 
   
   <button type="submit" class="btn btn-outline-dark" id="btn_complite">작성완료</button>
   

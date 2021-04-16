@@ -25,4 +25,8 @@ public interface FreeBoardMapper {
 	
 	public void insertFile(Map<String,Object>map) ;
 	
+	public List<Map<String, Object>> selectFileList(int f_no);
+	
+	public void boardCount(int f_no);
+	
 }

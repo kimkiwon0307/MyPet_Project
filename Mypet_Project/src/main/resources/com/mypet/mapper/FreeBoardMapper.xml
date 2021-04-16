@@ -5,12 +5,15 @@
 <mapper namespace="com.mypet.mapper.FreeBoardMapper">
 	
 	<select id="getList" resultType="com.mypet.domain.FreeBoardVO">
-		<![CDATA[
-			select * from freeboard where f_no > 0 
-		]]>
+	
+			select * from freeboard order by f_date DESC
+		
 	</select>
 	
-	<insert id="insert">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="f_no" >
+	   <selectKey keyProperty="f_no" resultType="int" order="BEFORE">
+	    	SELECT seq_freeboard.nextval FROM DUAL
+	    </selectKey>
 		insert into freeboard(f_no,f_title,f_content,f_writer) 
 		values(seq_freeboard.nextval, #{f_title}, #{f_content}, #{f_writer})
 	</insert>
@@ -64,6 +67,7 @@
 				rownum <= #{pageNum} * #{amount}
 				)
 			where rn > (#{pageNum } - 1) * #{amount}
+			ORDER BY f_no DESC
 		]]>
 	</select>
 	
@@ -73,12 +77,28 @@
 	
 	
 	<insert id="insertFile" parameterType="hashMap">
-		insert into free_file(
-		
+		INSERT INTO freefile(
+			FILE_NO,
+			f_no,
+			ORG_FILE_NAME,
+			STORED_FILE_NAME,
+			FILE_SIZE
+		)VALUES(
+			seq_freeboard.nextval,
+			#{f_no},
+			#{ORG_FILE_NAME},
+			#{STORED_FILE_NAME},
+			#{FILE_SIZE}
 		)
+    </insert>
+    
+
 	
-	</insert>
-	
+	<update id="boardCount" parameterType="int">
+			update freeboard set
+			f_count = f_count + 1
+			where f_no = #{f_no}
+	</update>
 	
 
 </mapper>

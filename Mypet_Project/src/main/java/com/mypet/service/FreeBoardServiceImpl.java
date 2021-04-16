@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.mypet.domain.Criteria;
@@ -33,8 +35,10 @@ public class FreeBoardServiceImpl implements FreeBoardService{
 		mapper.insert(free);
 	}
 
+	@Transactional(isolation = Isolation.READ_COMMITTED)
 	@Override
 	public FreeBoardVO get(int f_no) {
+		mapper.boardCount(f_no);
 		return mapper.read(f_no);
 	}
 
@@ -74,7 +78,13 @@ public class FreeBoardServiceImpl implements FreeBoardService{
 		}
 		
 	}
+
+	/*
+	 * @Override public List<Map<String, Object>> selectFileList(int f_no) { // TODO
+	 * Auto-generated method stub return mapper.selectFileList(f_no); }
+	 */
 	
+
 	
 
 }

@@ -47,8 +47,7 @@
 
 	<p>
 		<c:out value="${free.f_content}" />
-		반갑습니다 반가워요 다시만나요<br> 반갑습니다 반가워요 다시만나요<br> 반갑습니다 반가워요 다시만나요<br>
-		반갑습니다 반가워요 다시만나요<br> 반갑습니다 반가워요 다시만나요<br> 반갑습니다 반가워요 다시만나요<br>
+		
 	</p>
 
 	<button id="recomend_btn" style="margin-left: 500px;" type="button"
@@ -58,10 +57,12 @@
 
 
 
-	<!--   <div class="form-group">
+
+<div class="form-group">
     <label class="form">첨부 자료 </label>
      <input type="file" class="form-control-file border" id="f_file">
-  </div> -->
+  </div>
+
 
 	<!--  <button type="submit" class="btn btn-outline-dark" id="btn_complite">작성완료</button> -->
 
