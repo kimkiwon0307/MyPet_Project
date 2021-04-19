@@ -76,28 +76,30 @@
 		<ul class="list-group list-group-flush">
 		    <li class="list-group-item">
 			<div class="form-inline mb-2">
-				<label><i class="fa fa-user-circle-o fa-2x"> ${replyList.replyer}</i></label>
-                &nbsp&nbsp&nbsp&nbsp
+				<label><i class="fa fa-user-circle-o fa-2x"> ${replyList.writer}</i></label>
+               	&nbsp; &nbsp; &nbsp; &nbsp; 
                 <label><i class="fa fa-unlock-alt fa-2x">
-                		<fmt:formatDate value="${replyList.replyDate}" pattern="yyyy-MM-dd"/>
+                		<fmt:formatDate value="${replyList.regdate}" pattern="yyyy-MM-dd"/>
                 	</i></label>
 			</div>
 			
 			<textarea class="form-control" 
-			style="background-color:transparent; border: none; resize:none;focus " rows="2" readonly="readonly">${replyList.reply}</textarea>
-			
-			<form id="replyUpdateForm" method="post" style="display:none">
+			style="background-color:transparent; border: none; resize:none;focus " rows="2" readonly="readonly">${replyList.content}</textarea>
+	<%-- 		
+	<form id="replyUpdateForm" method="post" style="display:none">
   			
 		   		 <input type="hidden" id="f_no" name="f_no" value="${free.f_no}" />
 		   		 <input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}" />
 		   		 <input type="hidden" id="amount" name="amount" value="${cri.amount}" />
-		   		  <input type="hidden" id="rno" name="rno" value="${replyList.rno}" />
+		   		 <input type="hidden" id="rno" name="rno" value="${replyList.rno}" />
 					
-				<textarea class="form-control" id="reply" name="reply" rows="3" >${replyList.reply}</textarea>
+				<textarea class="form-control" id="content" name="content" rows="3" >${replyList.content}</textarea>
 				
-			</form>
-				<button type="submit" class="replayUpdateBtn">수정</button>
-				<button type="submit" id="replayDeleteBtn">삭제</button>
+	</form> --%>
+	
+	
+				<button type="submit" class="replayUpdateBtn" data-rno="${replyList.rno}">수정</button>
+				<button type="submit" id="replayDeleteBtn" data-rno="${replyList.rno}">삭제</button>
 				<button type="submit" id="replyUpdateCompleteBtn" style="display:none">완료</button>
 			
 		    </li>
@@ -107,18 +109,27 @@
 		
 	</div>
 </div>
+
 <form name="replyForm" method="post">
   <div class="card-body">
 		<ul class="list-group list-group-flush">
 		    <li class="list-group-item">
 		    <input type="hidden" id="f_no" name="f_no" value="${free.f_no}" />
+	
+		<c:if test="${member != null}" >
 			<div class="form-inline mb-2">
 				<label for="replyId"><i class="fa fa-user-circle-o fa-2x"></i></label>
-				<input type="text" class="form-control ml-2" placeholder="Enter yourId" id="replyer" name="replyer">
+					<input type="text" class="form-control ml-2" value="${member.m_id}" id="writer" name="writer" readonly="readonly">
+		
 			</div>
-			<textarea class="form-control" id="reply" name="reply" rows="3"></textarea>
+			<textarea class="form-control" id="content" name="content" rows="3"></textarea>
 			
 			<button type="button" class="btn btn-dark mt-3" id="replyWriteBtn">댓글 작성</button>
+		</c:if>
+	
+		<c:if test="${member == null}" >
+			 <textarea class="form-control" id="content" name="content" rows="3"> 로그인후에 작성 가능합니다.</textarea>
+		</c:if>
 		    </li>
 		</ul>
 	</div>
@@ -166,14 +177,18 @@
 		$(".replayUpdateBtn").on("click",function(e){
 			
 			console.log(this);
+	
+			location.href="/mypet/free/replyUpdateView?f_no=" + f_no + "&pageNum=" + pageNum + "&amount=" + amount + "&rno=" + $(this).attr("data-rno");
 			
 			
+			
+	/* 		
 			$(this).prev().show()
 			$(this).hide
 			$(this).next().css("display","none");  // 댓글 삭제버튼 숨기기
 			$(this).next().next().css("display","inline");
 			e.preventDefault();
-
+ */
 			
 		});
 		

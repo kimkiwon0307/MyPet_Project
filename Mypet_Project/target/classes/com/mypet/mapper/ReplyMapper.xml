@@ -4,68 +4,39 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mypet.mapper.ReplyMapper">
 	
-<!-- 	<insert id="insert">
-		insert into tbl_reply(rno, f_no, reply, replyer)
-		values (seq_reply.nextval, #{f_no}, #{reply}, #{replyer})
-	</insert>
-	
-	<select id ="read" resultType="com.mypet.domain.ReplyVO">
-		select * from tbl_reply where rno = #{rno}
-	</select>
-	
-	<delete id="delete">
-		delete from tbl_reply where rno = #{rno}
-	</delete>
-	
-	<update id="update">
-		update tbl_reply set reply = #{reply}, updatedate = sysdate where rno = #{rno}
-	</update>
 
-	<select id="getListWithPaging" resultType="com.mypet.domain.ReplyVO">
-			
-			select rno, f_no, reply, replyer, replyDate, updatedate 
-			from tbl_reply
-			where f_no = #{f_no}
-			order by rno asc
-		
-	</select>
- -->
 		
 	<select id="readReply" resultType="com.mypet.domain.ReplyVO">
-	
-		select 
-			rno, reply, replyer, replyDate, updatedate 
-			from tbl_reply 
-			where f_no = #{f_no}
-			order by rno asc
 		
+		select rno, content, writer, regdate
+		from free_reply
+		where f_no = #{f_no}
+	
 	</select>
 
 	<insert id="writeReply">
+		insert into 
+		free_reply(f_no,rno,content,writer)
+		values(#{f_no}, free_reply_seq.nextval, #{content}, #{writer})
 	
-		insert into tbl_reply(rno, f_no, reply, replyer)
-		values (seq_reply.nextval, #{f_no}, #{reply}, #{replyer})
 	</insert>
 	
-	<update id="updateReply">
-	
-		update tbl_reply 
-		set reply = #{reply},updatedate = sysdate 
-		where rno = #{rno} 
-		
+	<update id="updateReply" parameterType="com.mypet.domain.ReplyVO">
+		update free_reply set content = #{content}
+		where rno = #{rno}
 	</update>
 	
-	<delete id="deleteReply">
-		delete from tbl_reply
-		where rno = #{rno}
+	<delete id="deleteReply" parameterType="com.mypet.domain.ReplyVO">
+		delete from free_reply where rno = #{rno}
 	</delete>
-
+	
 	<select id="selectReply" resultType="com.mypet.domain.ReplyVO">
-		SELECT
-				f_No, rno, reply, replyer
-		FROM tbl_reply
-		 
-		WHERE rno = #{rno}
+		select
+			f_no, rno, content, writer, regdate
+		from
+			free_reply
+		where
+			rno=#{rno}
 	</select>
 
 </mapper>

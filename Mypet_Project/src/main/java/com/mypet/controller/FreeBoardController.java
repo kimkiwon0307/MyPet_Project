@@ -45,8 +45,6 @@ public class FreeBoardController {
 		
 		model.addAttribute("pageMaker", new PageDTO(cri,total));
 		
-		
-		
 	}
 	
 	@GetMapping("/register")
@@ -72,6 +70,7 @@ public class FreeBoardController {
 		List<ReplyVO> replyList = replyService.readReply(f_no);
 		model.addAttribute("replyList",replyList);
 		
+		
 		/*
 		 * List<Map<String, Object>> fileList = service.selectFileList(f_no);
 		 * model.addAttribute("file",fileList);
@@ -80,15 +79,15 @@ public class FreeBoardController {
 	}
 	
 	
-	//  @PostMapping("/modify") 
-	//  public String modify(FreeBoardVO free,RedirectAttributes rttr, @ModelAttribute("cri")Criteria cri) {
+	 @PostMapping("/modify") 
+	 public String modify(FreeBoardVO free,RedirectAttributes rttr, @ModelAttribute("cri")Criteria cri) {
 	  
-	//  if(service.modify(free)) { rttr.addFlashAttribute("result","success"); }
+	  if(service.modify(free)) { rttr.addFlashAttribute("result","success"); }
 	  
-	//   int pageNum = cri.getPageNum(); 
-	//   int amount = cri.getAmount();
+	  int pageNum = cri.getPageNum(); 
+	  int amount = cri.getAmount();
 	  
-	//  return "redirect:/free/list?pageNum="+ pageNum + "&amount="+ amount; }
+	 return "redirect:/free/list?pageNum="+ pageNum + "&amount="+ amount; }
 	 
 	
 	@PostMapping("/remove")
@@ -103,36 +102,79 @@ public class FreeBoardController {
 	}
 	
 	
-	//  @PostMapping("/replyWrite") 
-	//  public String replyWrite(ReplyVO reply, Criteria cri, RedirectAttributes rttr) {
+	  @PostMapping("/replyWrite") 
+	  public String replyWrite(ReplyVO reply, Criteria cri, RedirectAttributes rttr) {
 	  
-	//  replyService.writeReply(reply);
+	  replyService.writeReply(reply);
 	  
-	//  int f_no = reply.getF_no();  int pageNum = cri.getPageNum();  int amount = cri.getAmount();
+	  int f_no = reply.getF_no();  int pageNum = cri.getPageNum();  int amount = cri.getAmount();
 	  
-	//  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount + "&f_no=" + f_no;
-	  
-	  
-	 // }
+	  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount + "&f_no=" + f_no;
 	  
 	  
-	 // @PostMapping("/updateReply") 
-	 // public String replyUpdate(ReplyVO reply,Criteria cri) {
+	 }
+	  
+	  @GetMapping("/replyUpdateView")
+	  public String replyUpdateView(ReplyVO reply, Model model, Criteria cri) {
+		  
+		  model.addAttribute("replyUpdate", replyService.selectReply(reply.getRno()));
+		  model.addAttribute("cri",cri);
+		  
+		  return "/";
+		  
+	  }
 	  
 	  
-	 // int f_no = reply.getF_no();  
-	 // int pageNum = cri.getPageNum();  
-	 // int amount  = cri.getAmount(); 
+	  @PostMapping("/replyUpdate") 
+	  public String replyUpdate(ReplyVO reply,Criteria cri, RedirectAttributes rttr) {
 	  
-	//  int rno = reply.getRno();
 	  
-	//  replyService.updateReply(reply);
+	  int f_no = reply.getF_no();  
+	  int pageNum = cri.getPageNum();  
+	  int amount  = cri.getAmount(); 
 	  
-	//  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount +"&f_no=" + f_no; 
 	  
-	//  }
+	  replyService.updateReply(reply);
+	  
+	  rttr.addAttribute("f_no",f_no);
+	  rttr.addAttribute("pageNum",pageNum);
+	  rttr.addAttribute("amount",amount);
+	  
+	  
+	  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount +"&f_no=" + f_no; 
+	  
+	  }
 	 
-	
+	  @GetMapping("/replyDeleteView")
+	  public String replyDeleteView(ReplyVO reply, Model model, Criteria cri) {
+		  
+		  model.addAttribute("replyUpdate", replyService.selectReply(reply.getRno()));
+		  model.addAttribute("cri",cri);
+		  
+		  return "/";
+		  
+	  }
+	  
+	  
+	  @PostMapping("/replyDelete") 
+	  public String replyDelete(ReplyVO reply,Criteria cri, RedirectAttributes rttr) {
+	  
+	  
+	  int f_no = reply.getF_no();  
+	  int pageNum = cri.getPageNum();  
+	  int amount  = cri.getAmount(); 
+	  
+	  
+	  replyService.deleteReply(reply);
+	  
+	  rttr.addAttribute("f_no",f_no);
+	  rttr.addAttribute("pageNum",pageNum);
+	  rttr.addAttribute("amount",amount);
+	  
+	  
+	  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount +"&f_no=" + f_no; 
+	  
+	  }
 	
 
 	  

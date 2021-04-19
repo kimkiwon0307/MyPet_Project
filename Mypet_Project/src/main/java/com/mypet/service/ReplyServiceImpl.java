@@ -40,25 +40,17 @@ public class ReplyServiceImpl implements ReplyService {
 	public void deleteReply(ReplyVO reply) {
 		
 		mapper.deleteReply(reply);
-		
 	}
 
 	@Override
 	public ReplyVO selectReply(int rno) {
-		// TODO Auto-generated method stub
-		return mapper.selectReply(rno);
+
+		 return mapper.selectReply(rno);
+	
+	
 	}
 	
-	/*
-	 * @Override public int register(ReplyVO vo) { return mapper.insert(vo); }
-	 * 
-	 * @Override public ReplyVO get(int rno) { return mapper.read(rno); }
-	 * 
-	 * @Override public int modify(ReplyVO vo) { return mapper.update(vo); }
-	 * 
-	 * @Override public int remove(int rno) { return mapper.delete(rno) ; }
-	 * 
-	 * @Override public List<ReplyVO> getList(Criteria cri, int f_no) { // TODO
-	 * Auto-generated method stub return mapper.getListWithPaging(cri, f_no); }
-	 */
+	
+
+	
 }
