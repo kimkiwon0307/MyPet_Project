@@ -37,11 +37,11 @@
    </c:forEach>
     </tbody>
   </table>
-  
+   <br><br>
   <!-- 검색 폼 -->
   
-  <div class='row'>
-  	<div class="col-lg-12">
+  <div class='row' style="width: 100%;float: left;text-align: center;">
+  	<div class="col-lg-12" style="display: inline-block;">
   		
   		<form id='searchForm' action="/mypet/free/list" method='get'>
   			<select name='type' id='searchSelected'>
@@ -56,15 +56,17 @@
   			<input type='text' name='keyword' value='<c:out value="${pageMaker.cri.keyword}"/>'/>
   			<input type='hidden' name='pageNum' value=1>
   			<input type='hidden' name='amount' value='${pageMaker.cri.amount}'>
-  			<button class='btn btn-default' >검색</button>
+  			<button class='btn btn-outline-dark' >검색</button>
   		</form>
   	
   	</div>
   </div>
   <!-- /검색 폼-->
-  
+  <br>  <br>  <br>
+
   <!-- 페이징 -->
-  <div class="row">
+ <div style="width: 100%;float: left;text-align: center;">
+  <div class="row" style="display: inline-block;">
    <ul class="pagination">
    	<c:if test="${pageMaker.prev}">
   	  <li class="page-item"><a class="page-link" href="${pageMaker.startPage-1}">Previous</a></li>
@@ -80,6 +82,7 @@
    </c:if>
  
   </ul>
+  </div>
  </div>
   <!-- /페이징 -->
   

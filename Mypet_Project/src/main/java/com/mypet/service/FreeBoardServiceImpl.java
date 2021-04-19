@@ -52,18 +52,20 @@ public class FreeBoardServiceImpl implements FreeBoardService{
 		return mapper.delete(f_no)==1;
 	}
 
-	@Override
-	public List<FreeBoardVO> getList(Criteria cri) {
-		
-		return mapper.getListWithPaging(cri);
-	}
+	
+	  @Override public List<FreeBoardVO> getList(Criteria cri) {
+	  
+	  return mapper.getListWithPaging(cri); }
+	 
 
-	@Override
-	public int getTotal(Criteria cri) {
-		// TODO Auto-generated method stub
-		return mapper.getTotalCount(cri);
-	}
-
+	
+	  @Override 
+	  public int getTotal(Criteria cri) { // TODO Auto-generated method
+	  
+		  return mapper.getTotalCount(cri); 
+	  
+	  }
+	 
 	@Override
 	public void register(FreeBoardVO free, MultipartHttpServletRequest mpRequest) throws Exception {
 		
@@ -78,6 +80,8 @@ public class FreeBoardServiceImpl implements FreeBoardService{
 		}
 		
 	}
+
+
 
 	/*
 	 * @Override public List<Map<String, Object>> selectFileList(int f_no) { // TODO

@@ -1,7 +1,6 @@
 package com.mypet.service;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -28,5 +27,7 @@ public interface FreeBoardService {
 	
 //	public List<Map<String, Object>> selectFileList(int f_no) ;
 	
+	
+
 	
 }

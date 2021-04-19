@@ -42,8 +42,11 @@ public class FreeBoardController {
 		int total = service.getTotal(cri);
 
 		model.addAttribute("list", service.getList(cri));
+		
 		model.addAttribute("pageMaker", new PageDTO(cri,total));
-		 
+		
+		
+		
 	}
 	
 	@GetMapping("/register")
@@ -76,18 +79,17 @@ public class FreeBoardController {
 	
 	}
 	
-	@PostMapping("/modify")
-	public String modify(FreeBoardVO free, RedirectAttributes rttr, @ModelAttribute("cri")Criteria cri) {
-		
-		if(service.modify(free)) {
-			rttr.addFlashAttribute("result","success");
-		}
-		
-		int pageNum = cri.getPageNum();
-		int amount = cri.getAmount();
-		
-		return "redirect:/free/list?pageNum="+ pageNum + "&amount="+ amount;
-	}
+	
+	//  @PostMapping("/modify") 
+	//  public String modify(FreeBoardVO free,RedirectAttributes rttr, @ModelAttribute("cri")Criteria cri) {
+	  
+	//  if(service.modify(free)) { rttr.addFlashAttribute("result","success"); }
+	  
+	//   int pageNum = cri.getPageNum(); 
+	//   int amount = cri.getAmount();
+	  
+	//  return "redirect:/free/list?pageNum="+ pageNum + "&amount="+ amount; }
+	 
 	
 	@PostMapping("/remove")
 	public String remove(int f_no, RedirectAttributes rttr) {
@@ -100,35 +102,38 @@ public class FreeBoardController {
 		return "redirect:/free/list";
 	}
 	
-	@PostMapping("/replyWrite")
-	public String replyWrite(ReplyVO reply, Criteria cri, RedirectAttributes rttr) {
-		
-		replyService.writeReply(reply);
-		
-		int f_no = reply.getF_no();
-		int pageNum = cri.getPageNum();
-		int amount = cri.getAmount();
-		
-		return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount + "&f_no=" + f_no; 
-		
-		
-	}
 	
-	
-	  @PostMapping("/updateReply") 
-	  public String replyUpdate(ReplyVO reply, Criteria cri) {
-		  
-		  System.out.println("�븞�뀞"+ reply.getReply());
-		  
-		int f_no = reply.getF_no();
-		int pageNum = cri.getPageNum();
-		int amount = cri.getAmount();
-		int rno = reply.getRno();
-	  replyService.updateReply(reply);
+	//  @PostMapping("/replyWrite") 
+	//  public String replyWrite(ReplyVO reply, Criteria cri, RedirectAttributes rttr) {
 	  
-	  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount + "&f_no=" + f_no; 
-	  }
+	//  replyService.writeReply(reply);
+	  
+	//  int f_no = reply.getF_no();  int pageNum = cri.getPageNum();  int amount = cri.getAmount();
+	  
+	//  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount + "&f_no=" + f_no;
+	  
+	  
+	 // }
+	  
+	  
+	 // @PostMapping("/updateReply") 
+	 // public String replyUpdate(ReplyVO reply,Criteria cri) {
+	  
+	  
+	 // int f_no = reply.getF_no();  
+	 // int pageNum = cri.getPageNum();  
+	 // int amount  = cri.getAmount(); 
+	  
+	//  int rno = reply.getRno();
+	  
+	//  replyService.updateReply(reply);
+	  
+	//  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount +"&f_no=" + f_no; 
+	  
+	//  }
 	 
 	
 	
+
+	  
 }

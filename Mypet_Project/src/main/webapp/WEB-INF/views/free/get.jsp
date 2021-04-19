@@ -3,16 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
 
 <style>
 
 </style>
 <div class="container">
 	<br />
-	<h5>조회</h5>
+	  <h5>조회 페이지</h5>
 
 	<hr>
 	<div class="row">
@@ -35,33 +36,29 @@
 			<fmt:formatDate pattern="yyyy/MM/dd" value="${free.f_date}" />
 		</div>
 		<div class="col">
-			조회 :
-			<c:out value="${free.f_count}" />
+			조회 : <c:out value="${free.f_count}" />
 		</div>
 		<div class="col">
-			추천 :
-			<c:out value="${free.f_recomend}" />
+			추천 : <c:out value="${free.f_recomend}" />
 		</div>
 	</div>
 	<div class="row" style="height: 20px;"></div>
-
-	<p>
+	<div>
 		<c:out value="${free.f_content}" />
-		
-	</p>
+	</div>	
 
 	<button id="recomend_btn" style="margin-left: 500px;" type="button"
-		class="btn btn-outline-secondary btn-lg">추천</button>
+		class="btn btn-outline-success">추천</button>
 
 
 
 
 
-
+<!-- 
 <div class="form-group">
     <label class="form">첨부 자료 </label>
      <input type="file" class="form-control-file border" id="f_file">
-  </div>
+  </div> -->
 
 
 	<!--  <button type="submit" class="btn btn-outline-dark" id="btn_complite">작성완료</button> -->
@@ -184,5 +181,7 @@
 	});
 
 </script>
+<script src="${pageContext.request.contextPath}/resources/common/js/ckeditor.js"></script>
+
 </body>
 </html>

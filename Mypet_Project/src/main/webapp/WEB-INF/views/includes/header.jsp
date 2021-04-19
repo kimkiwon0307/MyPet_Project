@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Website Example</title>
+  <title>MyPet</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -46,8 +46,5 @@
   </div>  
 </nav>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
- 	
-  <h1>My First Bootstrap 4 Page</h1>
-  <p>Resize this responsive page to see the effect!</p> 
+<div class="jumbotron text-center" style="margin-bottom:0; height: 300px;">
 </div>

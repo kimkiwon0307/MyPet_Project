@@ -29,4 +29,5 @@ public interface FreeBoardMapper {
 	
 	public void boardCount(int f_no);
 	
+
 }

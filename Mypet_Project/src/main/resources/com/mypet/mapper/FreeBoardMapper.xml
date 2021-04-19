@@ -5,9 +5,7 @@
 <mapper namespace="com.mypet.mapper.FreeBoardMapper">
 	
 	<select id="getList" resultType="com.mypet.domain.FreeBoardVO">
-	
-			select * from freeboard order by f_date DESC
-		
+			select  f_no, f_title, f_writer, f_content from freeboard order by f_no desc		
 	</select>
 	
 	<insert id="insert" useGeneratedKeys="true" keyProperty="f_no" >
@@ -35,19 +33,18 @@
 		delete freeboard where f_no = #{f_no}
 	</delete>
 	
-	<select id="getListWithPaging" resultType="com.mypet.domain.FreeBoardVO">
+ 	<select id="getListWithPaging" resultType="com.mypet.domain.FreeBoardVO">
 		<![CDATA[
 			select 
 				f_no, f_title, f_content, f_writer, f_count, f_date, f_udate
 			from
 				( 
-				select /*+INDEX_DESC(freeboard pk_free) */
+				select
 					rownum rn, f_no, f_title, f_content, f_writer, f_count, f_date, f_udate
 				from
 					freeboard
 				where 
-				]]>
-				
+	 		]]>
 				<trim prefix="(" suffix=") AND " prefixOverrides="OR">
 					<foreach item='type' collection="typeArr">
 						<trim prefix="OR">
@@ -61,20 +58,23 @@
 							</choose>
 						</trim>
 					</foreach>
-				</trim>
+				</trim> 
 				
 			<![CDATA[	
 				rownum <= #{pageNum} * #{amount}
+				order by f_no desc
+				
 				)
 			where rn > (#{pageNum } - 1) * #{amount}
-			ORDER BY f_no DESC
+			
 		]]>
-	</select>
+	</select> 
+
 	
-	<select id="getTotalCount" resultType="int">
+ 	<select id="getTotalCount" resultType="int">
 		select count(*) from freeboard where f_no > 0
 	</select>
-	
+	 
 	
 	<insert id="insertFile" parameterType="hashMap">
 		INSERT INTO freefile(

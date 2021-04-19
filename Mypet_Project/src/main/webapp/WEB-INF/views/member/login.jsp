@@ -18,7 +18,7 @@
 }
 
 .bg-image {
-  background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
+  background-image: url('https://i.pinimg.com/474x/39/a7/59/39a7597e7c3ed5a4ddc7206760082714.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -128,7 +128,7 @@
 	<div class="container-fluid">
   <div class="row no-gutter">
     <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-    <div class="col-md-8 col-lg-6">
+    <div class="col-md-8 col-lg-6" style="background-color: antiquewhite;">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
