@@ -6,21 +6,6 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	<title>게시판</title>
 	</head>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var formObj = $("form[name='updateForm']");
-			
-			$(".cancel_btn").on("click", function(){
-				location.href = "/board/readView?bno=${replyUpdate.bno}"
-					   + "&page=${scri.page}"
-					   + "&perPageNum=${scri.perPageNum}"
-					   + "&searchType=${scri.searchType}"
-					   + "&keyword=${scri.keyword}";
-			})
-			
-		})
-		
-	</script>
 	<body>
 	
 		<div id="root">
@@ -35,13 +20,12 @@
 			<hr />
 			
 			<section id="container">
-				<form name="updateForm" role="form" method="post" action="/board/replyUpdate">
-					<input type="hidden" name="bno" value="${replyUpdate.bno}" readonly="readonly"/>
-					<input type="hidden" id="rno" name="rno" value="${replyUpdate.rno}" />
-					<input type="hidden" id="page" name="page" value="${scri.page}"> 
-					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
-					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
-					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
+			
+				<form id="updateForm" method="post" action="/mypet/free/replyUpdate"  >
+					<input type="hidden" id="f_no" name="f_no" value="${replyUpdate.f_no}" />
+		   		 <input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}" />
+		   		 <input type="hidden" id="amount" name="amount" value="${cri.amount}" />
+		   		 <input type="hidden" id="rno" name="rno" value="${replyUpdate.rno}" /> 
 					<table>
 						<tbody>
 							<tr>
@@ -61,4 +45,5 @@
 			<hr />
 		</div>
 	</body>
+
 </html>

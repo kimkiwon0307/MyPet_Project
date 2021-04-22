@@ -1,5 +1,6 @@
 package com.mypet.controller;
 
+import java.net.http.HttpRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -67,6 +68,8 @@ public class FreeBoardController {
 		
 		model.addAttribute("free", service.get(f_no));
 		
+	
+		
 		List<ReplyVO> replyList = replyService.readReply(f_no);
 		model.addAttribute("replyList",replyList);
 		
@@ -115,12 +118,11 @@ public class FreeBoardController {
 	 }
 	  
 	  @GetMapping("/replyUpdateView")
-	  public String replyUpdateView(ReplyVO reply, Model model, Criteria cri) {
+	  public void replyUpdateView(ReplyVO reply, Model model, Criteria cri) {
 		  
 		  model.addAttribute("replyUpdate", replyService.selectReply(reply.getRno()));
 		  model.addAttribute("cri",cri);
 		  
-		  return "/";
 		  
 	  }
 	  
@@ -128,20 +130,25 @@ public class FreeBoardController {
 	  @PostMapping("/replyUpdate") 
 	  public String replyUpdate(ReplyVO reply,Criteria cri, RedirectAttributes rttr) {
 	  
+		System.out.println(reply.toString());
+		
+		replyService.updateReply(reply);
 	  
-	  int f_no = reply.getF_no();  
-	  int pageNum = cri.getPageNum();  
-	  int amount  = cri.getAmount(); 
-	  
-	  
-	  replyService.updateReply(reply);
-	  
-	  rttr.addAttribute("f_no",f_no);
-	  rttr.addAttribute("pageNum",pageNum);
-	  rttr.addAttribute("amount",amount);
-	  
+		
+		  int f_no = reply.getF_no(); 
+		  int pageNum = cri.getPageNum(); 
+		  int amount =
+		  cri.getAmount();
+		  
+		  
+		  replyService.updateReply(reply);
+		  
+		  rttr.addAttribute("f_no",f_no); rttr.addAttribute("pageNum",pageNum);
+		  rttr.addAttribute("amount",amount);
+		 
 	  
 	  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount +"&f_no=" + f_no; 
+	  
 	  
 	  }
 	 

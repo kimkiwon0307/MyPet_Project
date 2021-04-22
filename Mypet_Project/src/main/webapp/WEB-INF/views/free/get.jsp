@@ -72,7 +72,8 @@
 	        <i class="fa fa-comment fa"></i> Comment
 	</div>
 	<div class="card-body">
-		<c:forEach items="${replyList}" var="replyList">
+	
+	<c:forEach items="${replyList}" var="replyList">
 		<ul class="list-group list-group-flush">
 		    <li class="list-group-item">
 			<div class="form-inline mb-2">
@@ -85,26 +86,23 @@
 			
 			<textarea class="form-control" 
 			style="background-color:transparent; border: none; resize:none;focus " rows="2" readonly="readonly">${replyList.content}</textarea>
-	<%-- 		
-	<form id="replyUpdateForm" method="post" style="display:none">
+<%--  	<form id="replyUpdateForm" method="post" style="display:none" action="/mypet/free/replyUpdate"  >
   			
 		   		 <input type="hidden" id="f_no" name="f_no" value="${free.f_no}" />
 		   		 <input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}" />
 		   		 <input type="hidden" id="amount" name="amount" value="${cri.amount}" />
-		   		 <input type="hidden" id="rno" name="rno" value="${replyList.rno}" />
-					
+		   		 <input type="hidden" id="rno" name="rno" value="${replyList.rno}" /> 
+				
 				<textarea class="form-control" id="content" name="content" rows="3" >${replyList.content}</textarea>
 				
-	</form> --%>
-	
-	
-				<button type="submit" class="replayUpdateBtn" data-rno="${replyList.rno}">수정</button>
+	 </form>  --%>
+				<button type="submit" class="replayUpdateBtn" data-rno="${replyList.rno}" data-content="${replyList.content}">수정</button>
 				<button type="submit" id="replayDeleteBtn" data-rno="${replyList.rno}">삭제</button>
-				<button type="submit" id="replyUpdateCompleteBtn" style="display:none">완료</button>
-			
+				<%-- <button type="submit" class="replyUpdateCompleteBtn" data-rno="${replyList.rno}" data-content="${replyList.content}" style="display:none">완료</button> --%>
+				
 		    </li>
 		</ul>
-		</c:forEach>
+	</c:forEach>
 			
 		
 	</div>
@@ -167,30 +165,41 @@
 		
 		});
 		
-		$("#replyWriteBtn").on("click", function(){
+	/* 	$("#replyWriteBtn").on("click", function(){
 			  var formObj = $("form[name='replyForm']");
 			  formObj.attr("action", "/mypet/free/replyWrite");
 			  formObj.submit();
 			});
-
+ */
 		
 		$(".replayUpdateBtn").on("click",function(e){
 			
-			console.log(this);
+		/* 	console.log(this);
 	
-			location.href="/mypet/free/replyUpdateView?f_no=" + f_no + "&pageNum=" + pageNum + "&amount=" + amount + "&rno=" + $(this).attr("data-rno");
-			
-			
-			
-	/* 		
-			$(this).prev().show()
-			$(this).hide
+			$(this).prev().show();
+			$(this).hide();
 			$(this).next().css("display","none");  // 댓글 삭제버튼 숨기기
 			$(this).next().next().css("display","inline");
-			e.preventDefault();
- */
+			e.preventDefault(); */
+			
+			self.location = "/mypet/free/replyUpdateView?f_no=" + f_no + "&pageNum=" + pageNum + "&amount=" + amount + "&rno=" +$(this).attr("data-rno");
 			
 		});
+		
+	/* 	$(".replyUpdateCompleteBtn").on("click",function(){
+			
+			var formObj = $("form[id='replyUpdateForm']");
+			
+			var rno = $(this).data("rno");
+			var content = $(this).data("content");
+			
+		    $("input[id='rno']").val(rno);
+		  
+		 	alert(content);
+			
+		    
+			formObj.submit();
+		}); */
 		
 		
 	});
