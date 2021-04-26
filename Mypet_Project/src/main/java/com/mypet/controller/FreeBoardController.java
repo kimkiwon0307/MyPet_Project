@@ -68,11 +68,8 @@ public class FreeBoardController {
 		
 		model.addAttribute("free", service.get(f_no));
 		
-	
-		
 		List<ReplyVO> replyList = replyService.readReply(f_no);
 		model.addAttribute("replyList",replyList);
-		
 		
 		/*
 		 * List<Map<String, Object>> fileList = service.selectFileList(f_no);
@@ -110,7 +107,9 @@ public class FreeBoardController {
 	  
 	  replyService.writeReply(reply);
 	  
-	  int f_no = reply.getF_no();  int pageNum = cri.getPageNum();  int amount = cri.getAmount();
+	  int f_no = reply.getF_no(); 
+	  int pageNum = cri.getPageNum();  
+	  int amount = cri.getAmount();
 	  
 	  return "redirect:/free/get?pageNum=" + pageNum + "&amount="+ amount + "&f_no=" + f_no;
 	  
@@ -140,7 +139,6 @@ public class FreeBoardController {
 		  int amount =
 		  cri.getAmount();
 		  
-		  
 		  replyService.updateReply(reply);
 		  
 		  rttr.addAttribute("f_no",f_no); rttr.addAttribute("pageNum",pageNum);
@@ -153,12 +151,10 @@ public class FreeBoardController {
 	  }
 	 
 	  @GetMapping("/replyDeleteView")
-	  public String replyDeleteView(ReplyVO reply, Model model, Criteria cri) {
+	  public void replyDeleteView(ReplyVO reply, Model model, Criteria cri) {
 		  
-		  model.addAttribute("replyUpdate", replyService.selectReply(reply.getRno()));
+		  model.addAttribute("replyDelete", replyService.selectReply(reply.getRno()));
 		  model.addAttribute("cri",cri);
-		  
-		  return "/";
 		  
 	  }
 	  

@@ -9,20 +9,19 @@
 
 <div class="container">
 	<br />
-	  <h5>댓글 수정 페이지</h5>
+	  <h5>댓글 삭제 페이지</h5>
 
 	<hr>
 			<div class="container">
-				<form id="updateForm" method="post" action="/mypet/free/replyUpdate">
-					<input type="hidden" id="f_no" name="f_no" value="${replyUpdate.f_no}" />
+				<form id="deleteForm" method="post" action="/mypet/free/replyDelete"  >
+					<input type="hidden" id="f_no" name="f_no" value="${replyDelete.f_no}" />
 		   		 <input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}" />
 		   		 <input type="hidden" id="amount" name="amount" value="${cri.amount}" />
-		   		 <input type="hidden" id="rno" name="rno" value="${replyUpdate.rno}" /> 
-			<div class="form-group"><textarea class="form-control" rows="10" name='content'><c:out value="${replyUpdate.content}"/></textarea>
-  	</div>
-				
-					<div>
-						<button type="submit" id ="update_btn">저장</button>
+		   		 <input type="hidden" id="rno" name="rno" value="${replyDelete.rno}" /> 
+			<div>
+				<label>삭제 하시겠습니까?</label>
+			
+						<button type="submit" id ="delete_btn">삭제</button>
 						<button type="button" id ="cancel_btn">취소</button>
 					</div>
 				</form>
@@ -36,7 +35,7 @@
 
 $(document).ready(function(){
 
-	var f_no = '<c:out value="${replyUpdate.f_no}"/>';
+	var f_no = '<c:out value="${replyDelete.f_no}"/>';
 	var pageNum = ${cri.pageNum};
 	var amount = ${cri.amount}; 	
 	

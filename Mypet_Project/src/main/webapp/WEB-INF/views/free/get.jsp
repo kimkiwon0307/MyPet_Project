@@ -8,9 +8,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
 
-<style>
-
-</style>
 <div class="container">
 	<br />
 	  <h5>조회 페이지</h5>
@@ -38,19 +35,19 @@
 		<div class="col">
 			조회 : <c:out value="${free.f_count}" />
 		</div>
-		<div class="col">
+		<%-- <div class="col">
 			추천 : <c:out value="${free.f_recomend}" />
-		</div>
+		</div> --%>
 	</div>
 	<div class="row" style="height: 20px;"></div>
 	<div>
 		<c:out value="${free.f_content}" />
 	</div>	
-
+<!-- 
 	<button id="recomend_btn" style="margin-left: 500px;" type="button"
 		class="btn btn-outline-success">추천</button>
 
-
+ -->
 
 
 
@@ -96,10 +93,10 @@
 				<textarea class="form-control" id="content" name="content" rows="3" >${replyList.content}</textarea>
 				
 	 </form>  --%>
-				<button type="submit" class="replayUpdateBtn" data-rno="${replyList.rno}" data-content="${replyList.content}">수정</button>
-				<button type="submit" id="replayDeleteBtn" data-rno="${replyList.rno}">삭제</button>
-				<%-- <button type="submit" class="replyUpdateCompleteBtn" data-rno="${replyList.rno}" data-content="${replyList.content}" style="display:none">완료</button> --%>
-				
+		<c:if test="${replyList.writer == member.m_id}">
+				<button type="submit"  class="replayUpdateBtn" data-rno="${replyList.rno}" data-content="${replyList.content}">수정</button>
+				<button type="submit" class="replayDeleteBtn" data-rno="${replyList.rno}">삭제</button>
+		</c:if>
 		    </li>
 		</ul>
 	</c:forEach>
@@ -165,14 +162,13 @@
 		
 		});
 		
-	/* 	$("#replyWriteBtn").on("click", function(){
+	 	$("#replyWriteBtn").on("click", function(){
 			  var formObj = $("form[name='replyForm']");
 			  formObj.attr("action", "/mypet/free/replyWrite");
 			  formObj.submit();
 			});
- */
-		
-		$(".replayUpdateBtn").on("click",function(e){
+ 
+		$(".replayUpdateBtn").on("click",function(){
 			
 		/* 	console.log(this);
 	
@@ -185,6 +181,15 @@
 			self.location = "/mypet/free/replyUpdateView?f_no=" + f_no + "&pageNum=" + pageNum + "&amount=" + amount + "&rno=" +$(this).attr("data-rno");
 			
 		});
+		
+		
+		$(".replayDeleteBtn").on("click",function(){
+	
+				self.location = "/mypet/free/replyDeleteView?f_no=" + f_no + "&pageNum=" + pageNum + "&amount=" + amount + "&rno=" +$(this).attr("data-rno");
+				
+			});
+		
+		
 		
 	/* 	$(".replyUpdateCompleteBtn").on("click",function(){
 			

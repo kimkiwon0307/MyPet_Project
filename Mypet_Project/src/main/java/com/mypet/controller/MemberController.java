@@ -90,10 +90,8 @@ public class MemberController {
 	@PostMapping("/passChk")
 	public int passChk(MemberVO member) {
 			
-		
 	int result =service.passChk(member);
 	
-	System.out.println("반가워요" + result);
 	return result;
 	}
 	
@@ -105,7 +103,6 @@ public class MemberController {
 		
 	int result =service.idChk(member);
 	
-	System.out.println("반가워요" + result);
 
 	return result;
 	}
