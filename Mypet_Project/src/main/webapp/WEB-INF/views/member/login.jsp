@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@include file="../includes/header.jsp" %>
+<%@include file="../includes/header_notjumbo.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,10 +145,10 @@
                    <label>비밀번호를 적어주세요</label>
                 </div>
 
-                <div class="custom-control custom-checkbox mb-3">
+              <!--   <div class="custom-control custom-checkbox mb-3">
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Remember password</label>
-                </div>
+                  <label class="custom-control-label" for="customCheck1"></label>
+                </div> -->
                 <button id="signBtn" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
                 <div class="text-center">
                   <a class="small" href="/mypet/member/register">회원가입</a></div>

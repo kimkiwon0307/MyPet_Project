@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
@@ -46,5 +45,7 @@
   </div>  
 </nav>
 
-<div class="jumbotron text-center" style="margin-bottom:0; height: 300px;">
+<div class="jumbotron text-center" style="margin-bottom:0; height: 300px; 
+ background-image: url('https://image.freepik.com/free-vector/cute-corgi-butt-welsh-corgi-dog-looking-back-seamless-pattern_42750-646.jpg');">
+	
 </div>
