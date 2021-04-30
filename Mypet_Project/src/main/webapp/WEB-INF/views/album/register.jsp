@@ -1,39 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@include file="../includes/header.jsp" %>
+<%@include file="../includes/header.jsp"%>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css" rel="stylesheet" />
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css"
+	rel="stylesheet" />
 <style>
 .row {
-  margin: 15px;
+	margin: 15px;
 }
 </style>
 
 <div class="container">
-	<br>
-	<br>
-	  
-	  <form name="form" action="/mypet/album/register" method="post" enctype="multipart/form-data">
-        
-    <div class="form-group">
-    <label>제목</label>
-    <input type="text" class="form-control"  name='a_title'>
-  </div>
-        
-        <input type="file" name="file" />
-        <input type="submit" value="전송" />
-    </form>
+	<br> <br>
+
+	<form name="form" action="/mypet/album/register" method="post"
+		enctype="multipart/form-data">
+
+		<div class="form-group">
+			<label>제목</label> <input type="text" class="form-control"
+				name='a_title'>
+		</div>
+
+
+		<div class="form-group">
+			<label>사진</label> <br>
+			<input type="file" name="file" multiple/>
+		</div>
 
 
 
-   
+		<input type="submit" value="전송" />
+	</form>
+
+
+
+
 
 </div>
 
-<%@include file="../includes/footer.jsp" %>
+<%@include file="../includes/footer.jsp"%>
 
 <script>
 	$(document).ready(function(e){

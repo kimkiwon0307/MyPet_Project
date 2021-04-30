@@ -26,8 +26,6 @@ public class AlbumController {
 	@GetMapping("/list")
 	public void list(Model model, AlbumVO album) throws Exception {
 		
-		List<Map<String,Object>>fileList = service.selectFileList(album.getA_no());
-		model.addAttribute("file",fileList);
 		model.addAttribute("list", service.getList());
 	}
 	
@@ -42,13 +40,22 @@ public class AlbumController {
 			
 			System.out.println(album);
 			service.register(album, mpRequest);
+			
+			
 
 			return "redirect:/album/list";
 	}
 	
 	@GetMapping("/get")
-	public void get(int a_no, Model model) {
+	public void get(int a_no, Model model) throws Exception {
 		model.addAttribute("album", service.get(a_no));
+		List<Map<String, Object>> fileList = service.selectFileList(a_no);
+		
+		System.out.println(fileList);
+		
+		model.addAttribute("file", fileList);
+		
+		
 	}
 	
 	@PostMapping("/modify")
