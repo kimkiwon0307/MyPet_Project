@@ -7,19 +7,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.mypet.domain.FreeBoardVO;
+import com.mypet.domain.AlbumVO;
 
-// 첨부 파일의 정보를 여러가지 조작할 클래스
+
+
 @Component("fileUtils")
 public class FileUtils {
-	private static final String filePath = "C:\\mp\\file\\"; // 파일이 저장될 위치
+	private static final String filePath = "C:\\image\\"; // 파일이 저장될 위치
 	
-	public List<Map<String, Object>> parseInsertFileInfo(FreeBoardVO free, 
+	public List<Map<String, Object>> parseInsertFileInfo(AlbumVO album, 
 			MultipartHttpServletRequest mpRequest) throws Exception{
 		
 		/*
@@ -38,7 +38,7 @@ public class FileUtils {
 		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
 		Map<String, Object> listMap = null;
 		
-		int f_no = free.getF_no();
+		int a_no = album.getA_no();
 		
 		File file = new File(filePath);
 		if(file.exists() == false) {
@@ -55,7 +55,7 @@ public class FileUtils {
 				file = new File(filePath + storedFileName);
 				multipartFile.transferTo(file);
 				listMap = new HashMap<String, Object>();
-				listMap.put("f_no", f_no);
+				listMap.put("a_no", a_no);
 				listMap.put("ORG_FILE_NAME", originalFileName);
 				listMap.put("STORED_FILE_NAME", storedFileName);
 				listMap.put("FILE_SIZE", multipartFile.getSize());

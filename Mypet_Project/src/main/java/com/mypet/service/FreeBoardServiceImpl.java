@@ -71,13 +71,13 @@ public class FreeBoardServiceImpl implements FreeBoardService{
 		
 		mapper.insert(free);
 		
-		List<Map<String,Object>> list = fileUtils.parseInsertFileInfo(free, mpRequest);
-		int size = list.size();
+	//	List<Map<String,Object>> list = fileUtils.parseInsertFileInfo(free, mpRequest);
+	//	int size = list.size();
 		
-		for(int i = 0; i<size; i++) {
+	//	for(int i = 0; i<size; i++) {
 			
-			mapper.insertFile(list.get(i));
-		}
+	//		mapper.insertFile(list.get(i));
+	//	}
 		
 	}
 

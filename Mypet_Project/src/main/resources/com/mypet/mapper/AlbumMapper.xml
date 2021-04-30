@@ -10,11 +10,13 @@
 		]]>
 	</select>
 	
-	<insert id="insert">
+	
+	
+	<!--  <insert id="insert">
 		insert into album(a_no,a_title) 
 		values(seq_album.nextval, #{a_title})
-	</insert>
-	
+	</insert> 
+	 -->
 	<select id="read" resultType="com.mypet.domain.AlbumVO">
 		select * from album where a_no = #{a_no}
 	</select>
@@ -32,5 +34,41 @@
 	
 	
 	
+	
+	
+	 <insert id="insert"  useGeneratedKeys="true" keyProperty="a_no">
+	    <selectKey keyProperty="a_no" resultType="int" order="BEFORE">
+	    	select seq_album.nextval from dual
+	    </selectKey>
+	    insert into album(a_no, a_title)
+	    values(seq_album.nextval,#{a_title})
+    </insert> 
+ 
+	<insert id="insertFile" parameterType="hashMap">
+		INSERT INTO ALBUM_FILE(
+			FILE_NO,
+			A_NO,
+			ORG_FILE_NAME,
+			STORED_FILE_NAME,
+			FILE_SIZE
+		)VALUES(
+			seq_album_file.nextval,
+			#{a_no},
+			#{ORG_FILE_NAME},
+			#{STORED_FILE_NAME},
+			#{FILE_SIZE}
+		)
+    </insert>
+
+	<select id="selectFileList" resultType="hashMap">
+	
+		select file_no,
+				org_file_name,
+				round(file_size/1024,1) as file_size
+		from album_file
+		where a_no = #{a_no} and del_gb = 'n'
+	
+	</select>
+
 
 </mapper>
