@@ -29,9 +29,9 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
+    <!--   <li class="nav-item">
         <a class="nav-link" href="/mypet/album/list">Album</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link" href="/mypet/free/list">FreeBoard</a>
       </li>

@@ -19,8 +19,7 @@ import com.mypet.domain.AlbumVO;
 public class FileUtils {
 	private static final String filePath = "C:\\image\\"; // 파일이 저장될 위치
 	
-	public List<Map<String, Object>> parseInsertFileInfo(AlbumVO album, 
-			MultipartHttpServletRequest mpRequest) throws Exception{
+	public List<Map<String, Object>> parseInsertFileInfo(AlbumVO album, MultipartHttpServletRequest mpRequest) throws Exception{
 		
 		/*
 			Iterator은 데이터들의 집합체? 에서 컬렉션으로부터 정보를 얻어올 수 있는 인터페이스입니다.
@@ -41,6 +40,7 @@ public class FileUtils {
 		int a_no = album.getA_no();
 		
 		File file = new File(filePath);
+		
 		if(file.exists() == false) {
 			file.mkdirs();
 		}

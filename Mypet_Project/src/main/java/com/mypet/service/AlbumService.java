@@ -20,4 +20,7 @@ public interface AlbumService {
 	public boolean remove(int a_no);                    // D
 	
 	public List<Map<String, Object>> selectFileList(int a_no) throws Exception;
+	
+	public Map<String,Object> selectFileInfo(Map<String,Object>map)throws Exception;
+
 }

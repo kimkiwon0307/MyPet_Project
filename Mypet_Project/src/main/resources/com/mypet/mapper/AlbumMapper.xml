@@ -70,5 +70,15 @@
 	
 	</select>
 
+	<select id="selectFileInfo" parameterType="hashMap" resultType="hashMap">
+		Select
+			Stored_file_name,
+			org_file_name
+		from album_file
+		where file_no = #{file_no}
+		
+		
+	</select>
+
 
 </mapper>

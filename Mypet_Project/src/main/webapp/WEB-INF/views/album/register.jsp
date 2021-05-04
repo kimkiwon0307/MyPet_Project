@@ -4,11 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css"
-	rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css" rel="stylesheet" />
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+	
+	
 <style>
 .row {
 	margin: 15px;
@@ -18,24 +20,23 @@
 <div class="container">
 	<br> <br>
 
-	<form name="form" action="/mypet/album/register" method="post"
-		enctype="multipart/form-data">
+	<form name="form" action="/mypet/album/register" method="post" enctype="multipart/form-data">
 
 		<div class="form-group">
 			<label>제목</label> <input type="text" class="form-control"
 				name='a_title'>
 		</div>
 
-
 		<div class="form-group">
 			<label>사진</label> <br>
 			<input type="file" name="file" multiple/>
 		</div>
 
-
-
 		<input type="submit" value="전송" />
 	</form>
+
+
+ 
 
 
 
@@ -46,6 +47,8 @@
 <%@include file="../includes/footer.jsp"%>
 
 <script>
+
+
 	$(document).ready(function(e){
 		
 		var formObj = $("form[role='form']");
@@ -109,9 +112,9 @@
 	  
 	});
 
-	
-	
-	
+
+ 
+
 
 </script>
 

@@ -20,7 +20,7 @@
         <th>작성자</th>
         <th>날짜</th>
         <th>조회</th>
-        <th>추천</th>
+        <!-- <th>추천</th> -->
       </tr>
     </thead>
     <tbody>
@@ -31,7 +31,7 @@
         <td><c:out value="${free.f_writer}"/></td>
         <td><fmt:formatDate pattern="yyyy.MM.dd" value="${free.f_date}"/></td>
         <td><c:out value="${free.f_count }"/></td>
-        <td><c:out value="${free.f_recomend }"/></td>
+       <%--  <td><c:out value="${free.f_recomend }"/></td> --%>
       </tr>
    </c:forEach>
     </tbody>

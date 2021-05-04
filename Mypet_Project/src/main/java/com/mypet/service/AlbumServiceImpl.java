@@ -61,6 +61,12 @@ public class AlbumServiceImpl implements AlbumService{
 		// TODO Auto-generated method stub
 		return mapper.selectFileList(a_no);
 	}
+
+	@Override
+	public Map<String, Object> selectFileInfo(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectFileInfo(map);
+	}
 	
 	
 

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp"%>
@@ -17,16 +17,16 @@
 		   		 <input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}" />
 		   		 <input type="hidden" id="amount" name="amount" value="${cri.amount}" />
 		   		 <input type="hidden" id="rno" name="rno" value="${replyUpdate.rno}" /> 
-			<div class="form-group"><textarea class="form-control" rows="10" name='content'><c:out value="${replyUpdate.content}"/></textarea>
-  	</div>
-				
+			<div class="form-group">
+				<textarea class="form-control" rows="10" name='content'><c:out value="${replyUpdate.content}"/></textarea>
+  			</div>
 					<div>
 						<button type="submit" id ="update_btn">저장</button>
 						<button type="button" id ="cancel_btn">취소</button>
 					</div>
 				</form>
 			</div>
-			<hr />
+			<hr/>
 		</div>
 		
 		<%@include file="../includes/footer.jsp" %>

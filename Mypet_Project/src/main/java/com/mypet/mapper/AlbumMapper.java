@@ -19,6 +19,10 @@ public interface AlbumMapper {
 	
 	public void insertFile(Map<String,Object>map)throws Exception;
 	
+	
 	public List<Map<String,Object>> selectFileList(int a_no)throws Exception;
+	
+	
+	public Map<String,Object> selectFileInfo(Map<String,Object>map)throws Exception;
 	
 }

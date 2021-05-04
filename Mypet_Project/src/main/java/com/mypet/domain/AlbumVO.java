@@ -1,7 +1,8 @@
 package com.mypet.domain;
 
 import java.util.Date;
-import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Data;
 
@@ -12,6 +13,5 @@ public class AlbumVO {
 	private String a_title;			// 앨범 제목
 	private Date a_date;            // 앨범 작성일
 	private Date a_udate;           // 앨범 수정일
-	
-	
+
 }
