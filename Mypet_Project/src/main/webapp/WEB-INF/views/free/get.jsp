@@ -7,6 +7,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <!-- <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script> -->
 <script src="${pageContext.request.contextPath}/resources/js/ckeditor/ckeditor.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<!-- include summernote css/js-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+
+
 <div class="container">
 	<br />
 	  <h5>조회 페이지</h5>
@@ -40,7 +46,9 @@
 	</div>
 	<div class="row" style="height: 20px;"></div>
 	<div>
-		<c:out value="${free.f_content}" />
+	
+	  <textarea class="summernote" name="f_content" id="summernote">	<c:out value="${free.f_content}" /></textarea>    
+	
 	</div>	
 <!-- 
 	<button id="recomend_btn" style="margin-left: 500px;" type="button"
@@ -204,6 +212,20 @@
 		    
 			formObj.submit();
 		}); */
+		
+		
+			
+			 
+			 $('#summernote').summernote({
+					height: 1000,                 // 에디터 높이
+					minHeight: null,             // 최소 높이
+					maxHeight: null, 
+					toolbar:toolbar,// 최대 높이
+					focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
+					lang: "ko-KR"				// 한글 설정
+				
+			});
+
 		
 		
 	});

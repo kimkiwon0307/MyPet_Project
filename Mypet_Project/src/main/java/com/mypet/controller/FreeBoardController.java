@@ -1,20 +1,17 @@
 package com.mypet.controller;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.InputStream;
 import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequestWrapper;
 
-import org.springframework.http.ResponseEntity;
+import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -192,80 +189,43 @@ public class FreeBoardController {
 	  
 	  }
 	 
-	  @PostMapping("/image")
-	  @ResponseBody
-	  public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) {
-	        try {
-	            UploadFile uploadedFile = imageService.store(file);
-	            return ResponseEntity.ok().body("/image/" + uploadedFile.getId());
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	            return ResponseEntity.badRequest().build();
-	        }
-	    }
 
-	  
-	  
+	    @RequestMapping(value="/uploadSummernoteImageFile", produces = "application/json; charset=utf8")
+		@ResponseBody
+		public String uploadSummernoteImageFile(@RequestParam("file") MultipartFile multipartFile, HttpServletRequest request )  {
+			
+	    	System.out.println("ㅗㅑ");
+	    	JsonObject jsonObject = new JsonObject();
+			// String fileRoot = "C:\\summernote_image\\"; // 외부경로로 저장을 희망할때.
+			 
+		    	 String contextRoot = new HttpServletRequestWrapper(request).getRealPath("/");
+		    	
+		    	 System.out.println(contextRoot);
+		    
+		    	 String fileRoot = contextRoot+"resources/fileupload/";
+		
 
-	
-	  @PostMapping("/fileupload.do")
-	  @ResponseBody
-	  public String fileUpload(HttpServletRequest req, HttpServletResponse resp, MultipartHttpServletRequest multiFile)
-	  throws Exception{
-		  
-		
-		  JsonObject json = new JsonObject();
-		 
-		  PrintWriter printWriter = null;
-		 
-		  OutputStream out = null;
-		 
-		  MultipartFile file = multiFile.getFile("upload");
-		
-		  if(file != null) {
-			  if(file.getSize() > 0 && StringUtils.isEmpty(file.getName())) {
-				  if(file.getContentType().toLowerCase().startsWith("image/")) {
-					  try {
-						  String fileName = file.getName();
-						  byte[] bytes = file.getBytes();
-						  String uploadPath = req.getServletContext().getRealPath("/imag");
-						  File uploadFile = new File(uploadPath);
-						  if(!uploadFile.exists()) {
-							  uploadFile.mkdirs();
-						  }
-						  fileName = UUID.randomUUID().toString();
-						  uploadPath = uploadPath + "/" + fileName;
-						  out = new FileOutputStream(new File(uploadPath));
-						  out.write(bytes);
-						  
-						  printWriter = resp.getWriter();
-						  resp.setContentType("text/html");
-						  String fileUrl = req.getContextPath() + "/img/" + fileName;
-						  
-						  json.addProperty("fileName", fileName);
-						  json.addProperty("uploaded", 1);
-						  json.addProperty("url", fileUrl);
-						
-						  printWriter.println(json);
-					  }catch(IOException e) {
-						  e.printStackTrace();
-					  
-					  }finally {
-						  if(out !=null) {
-							  out.close();
-						  }
-						  if(printWriter != null) {
-							  printWriter.close();
-						  }
-					  }
-				  }
-				  
-			  }
-			  
-		  }
-		  
-		  System.out.println("왜안됄까");
-		  return null;
-	  }
+			String originalFileName = multipartFile.getOriginalFilename();	//오리지날 파일명
+			String extension = originalFileName.substring(originalFileName.lastIndexOf("."));	//파일 확장자
+			String savedFileName = UUID.randomUUID() + extension;	//저장될 파일 명
+			
+			File targetFile = new File(fileRoot + savedFileName);	
+			try {
+				
+				InputStream fileStream = multipartFile.getInputStream();
+				FileUtils.copyInputStreamToFile(fileStream, targetFile);	//파일 저장
+				jsonObject.addProperty("url", "/mypet/resources/fileupload/"+savedFileName); // contextroot + resources + 저장할 내부 폴더명
+				jsonObject.addProperty("responseCode", "success");
+					
+			} catch (IOException e) {
+				FileUtils.deleteQuietly(targetFile);	//저장된 파일 삭제
+				jsonObject.addProperty("responseCode", "error");
+				e.printStackTrace();
+			}
+			
+			System.out.println(jsonObject.toString());
+			return jsonObject.toString();
+		}
+	  
 	  
 }
