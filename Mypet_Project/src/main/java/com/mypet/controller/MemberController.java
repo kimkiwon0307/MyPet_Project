@@ -34,7 +34,7 @@ public class MemberController {
 		
 		service.register(member);
 		
-		return "/mypet/free/list";
+		return "redirect:/member/login";
 	}
 	
 	

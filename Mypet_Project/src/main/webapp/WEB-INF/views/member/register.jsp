@@ -32,16 +32,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="email" class="cols-sm-2 control-label">이메일(Email)</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" name="m_email" id="m_email" placeholder="이메일을 적어주세요." />
-                                            	 <button type="button" id="idChkBtn">이메일인증</button>
-                                            </div>
-                                        </div>
-                                    </div>
                                  
                                     <div class="form-group">
                                         <label for="password" class="cols-sm-2 control-label">비밀번호(Password)</label>

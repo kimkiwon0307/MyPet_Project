@@ -6,8 +6,8 @@
 	
 	
 	<insert id="register">
-		insert into Member(m_id,m_pass,m_passconfirm,m_email, m_date) 
-		values ( #{m_id},#{m_pass},#{m_passconfirm},#{m_email}, sysdate)
+		insert into Member(m_id,m_pass,m_passconfirm, m_date) 
+		values ( #{m_id},#{m_pass},#{m_passconfirm}, sysdate)
 		
 	</insert>
 	

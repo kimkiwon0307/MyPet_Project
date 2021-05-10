@@ -5,8 +5,6 @@
  <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script> -->
-<script src="${pageContext.request.contextPath}/resources/js/ckeditor/ckeditor.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <!-- include summernote css/js-->
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
@@ -40,9 +38,7 @@
 		<div class="col">
 			조회 : <c:out value="${free.f_count}" />
 		</div>
-		<%-- <div class="col">
-			추천 : <c:out value="${free.f_recomend}" />
-		</div> --%>
+		
 	</div>
 	<div class="row" style="height: 20px;"></div>
 	<div>
@@ -50,22 +46,6 @@
 	  <textarea class="summernote" name="f_content" id="summernote">	<c:out value="${free.f_content}" /></textarea>    
 	
 	</div>	
-<!-- 
-	<button id="recomend_btn" style="margin-left: 500px;" type="button"
-		class="btn btn-outline-success">추천</button>
-
- -->
-
-
-
-<!-- 
-<div class="form-group">
-    <label class="form">첨부 자료 </label>
-     <input type="file" class="form-control-file border" id="f_file">
-  </div> -->
-
-
-	<!--  <button type="submit" class="btn btn-outline-dark" id="btn_complite">작성완료</button> -->
 
 	
 	<br> <br> <br> <br> <br> <br>
@@ -90,16 +70,7 @@
 			
 			<textarea class="form-control" 
 			style="background-color:transparent; border: none; resize:none;focus " rows="2" readonly="readonly">${replyList.content}</textarea>
-<%--  	<form id="replyUpdateForm" method="post" style="display:none" action="/mypet/free/replyUpdate"  >
-  			
-		   		 <input type="hidden" id="f_no" name="f_no" value="${free.f_no}" />
-		   		 <input type="hidden" id="pageNum" name="pageNum" value="${cri.pageNum}" />
-		   		 <input type="hidden" id="amount" name="amount" value="${cri.amount}" />
-		   		 <input type="hidden" id="rno" name="rno" value="${replyList.rno}" /> 
-				
-				<textarea class="form-control" id="content" name="content" rows="3" >${replyList.content}</textarea>
-				
-	 </form>  --%>
+
 		<c:if test="${replyList.writer == member.m_id}">
 				<button type="submit"  class="replayUpdateBtn" data-rno="${replyList.rno}" data-content="${replyList.content}">수정</button>
 				<button type="submit" class="replayDeleteBtn" data-rno="${replyList.rno}">삭제</button>
@@ -176,17 +147,7 @@
 			});
  
 		$(".replayUpdateBtn").on("click",function(){
-			
-		/* 	console.log(this);
-	
-			$(this).prev().show();
-			$(this).hide();
-			$(this).next().css("display","none");  // 댓글 삭제버튼 숨기기
-			$(this).next().next().css("display","inline");
-			e.preventDefault(); */
-			
 			self.location = "/mypet/free/replyUpdateView?f_no=" + f_no + "&pageNum=" + pageNum + "&amount=" + amount + "&rno=" +$(this).attr("data-rno");
-			
 		});
 		
 		
@@ -196,28 +157,9 @@
 				
 			});
 		
-		
-		
-	/* 	$(".replyUpdateCompleteBtn").on("click",function(){
-			
-			var formObj = $("form[id='replyUpdateForm']");
-			
-			var rno = $(this).data("rno");
-			var content = $(this).data("content");
-			
-		    $("input[id='rno']").val(rno);
-		  
-		 	alert(content);
-			
-		    
-			formObj.submit();
-		}); */
-		
-		
-			
 			 
 			 $('#summernote').summernote({
-					height: 1000,                 // 에디터 높이
+					height: 500,                 // 에디터 높이
 					minHeight: null,             // 최소 높이
 					maxHeight: null, 
 					toolbar:toolbar,// 최대 높이
@@ -225,13 +167,10 @@
 					lang: "ko-KR"				// 한글 설정
 				
 			});
-
-		
 		
 	});
 
 </script>
-<script src="${pageContext.request.contextPath}/resources/common/js/ckeditor.js"></script>
 
 </body>
 </html>
